@@ -1,0 +1,10 @@
+{
+  "icono": {
+    "imagen": "/img/watsapp-icon.webp",
+    "numero": "935909756",
+    "direccion": "Tienda virtual situada en Gamarra",
+    "correo": "sinttexeg@gmail.com" ,
+    "telefono": "93909756"
+  },
+  "favicon": "ruta/a/tu/favicon.ico"
+}

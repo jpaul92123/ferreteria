@@ -1,0 +1,36 @@
+[
+    {
+        "nombre": "POLOS",
+        "url": "/categoria/cat1.html",
+        "imagen": "/img/img-cat1.webp"
+    },
+    {
+        "nombre": "POLERAS",
+        "url": "/categoria/cat2.html",
+        "imagen": "/img/img-cat2.webp"
+    },
+    {
+        "nombre": "CHOMPAS",
+        "url": "/categoria/cat3.html",
+        "imagen": "/img/img-cat3.webp"
+    },
+    {
+        "nombre": "JOGUERS",
+        "url": "/categoria/cat4.html",
+        "imagen": "/img/img-cat4.webp"
+    }
+    ,
+    {
+        "nombre": "SHORTS",
+        "url": "/categoria/cat5.html",
+        "imagen": "/img/img-cat5.webp"
+    }
+    ,
+    {
+        "nombre": "PANTALONES",
+        "url": "/categoria/cat6.html",
+        "imagen": "/img/img-cat6.webp"
+    }
+  
+    
+]
