@@ -130,7 +130,7 @@ function buscarProducto() {
 
     const resultadosFiltrados = productos.filter(producto =>
         producto.nombre.toLowerCase().includes(query) ||
-        (producto.talla && producto.talla.toLowerCase().includes(query)) ||
+        (producto.tamaño && producto.tamaño.toLowerCase().includes(query)) ||
         (producto.descripcion && producto.descripcion.toLowerCase().includes(query))
     );
 
@@ -139,7 +139,7 @@ function buscarProducto() {
     } else {
         resultadosFiltrados.forEach(producto => {
             const nombreFormateado = encodeURIComponent(`Me interesa el producto ${producto.nombre}`);
-            const whatsappLink = `https://wa.me/935909756?text=${nombreFormateado}`;
+            const whatsappLink = `https://wa.me/959984541?text=${nombreFormateado}`;
 
             const divProducto = document.createElement('div');
             divProducto.classList.add('producto');
@@ -148,7 +148,7 @@ function buscarProducto() {
                 ${imgElement}
                 <div>
                     <strong>${producto.nombre}</strong>
-                    <p>Talla: ${producto.talla || 'N/A'}</p>
+                    <p>Tamaño: ${producto.tamaño || 'N/A'}</p>
                     <p>Descripción: ${producto.descripcion || 'N/A'}</p>
                     <strong>Precio: S/. ${producto.precio.toFixed(2)}</strong><br>
                     <a class="ver-producto whatsapp-link" href="${whatsappLink}" target="_blank">Comprar</a>
@@ -171,14 +171,14 @@ function buscarProducto() {
     function createProductItem(product) {
         // Define el enlace de WhatsApp
         const nombreFormateado = encodeURIComponent(`Me interesa el producto ${product.nombre}`);
-        const whatsappLink = `https://wa.me/935909756?text=${nombreFormateado}`;
+        const whatsappLink = `https://wa.me/959984541?text=${nombreFormateado}`;
     
         return `
             <div class=" gallery-item">
                 <img src="${product.imagen || 'default-image.jpg'}" alt="${product.nombre}" onerror="imagenError(this)" class="img-producto" onclick="verDetalles('${encodeURIComponent(JSON.stringify(product))}')">
                 <div class="">
                     <strong>${product.nombre}</strong>
-                    <p>Talla: ${product.talla || 'N/A'}</p>
+                    <p>Tamaño: ${product.tamaño || 'N/A'}</p>
                     <strong style="color:red">S/. ${product.precio.toFixed(2)}</strong><br>
                     <a class="ver-producto whatsapp-link" href="${whatsappLink}" target="_blank">Whatapp</a>
                 </div>
@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', function () {
         menu.classList.toggle('showm');
     });
 
-    // Mostrar/ocultar el submenú en pantallas pequeñas
+    // Mostrar/ocultar el submenú en pantamaños pequeñas
     submenuToggle.addEventListener('click', function (e) {
         e.preventDefault();
         const submenu = submenuToggle.nextElementSibling;
@@ -512,11 +512,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 <small class="pt-1">(50 Reviews)</small>
             </div>
             <h3 class="font-weight-semi-bold mb-4" style="color:red">S/. ${producto.precio.toFixed(2)}</h3>
-            <p>Talla: ${producto.talla || 'N/A'}</p>
+            <p>Tamaño: ${producto.tamaño || 'N/A'}</p>
             <p class="mb-4">Descripción: ${producto.descripcion || 'No hay descripción disponible'}</p>
 
             <div class="d-flex align-items-center mb-4 pt-2">
-                <a href="https://wa.me/935909756?" class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i>Pedir en Whatsapp</a>
+                <a href="https://wa.me/959984541?" class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i>Pedir en Whatsapp</a>
             </div>
         `;
     } else {
@@ -537,6 +537,7 @@ fetch('/data/promocion.json')
   document.getElementById('frase1').textContent = data.frase1;
   document.getElementById('frase2').textContent = data.frase2;
   document.getElementById('frase3').textContent = data.frase3;
+  document.getElementById('frase4').textContent = data.frase4;
   document.getElementById('slide1').src = data.slide1;
   document.getElementById('slide2').src = data.slide2;
   document.getElementById('slide3').src = data.slide3;
@@ -550,7 +551,7 @@ fetch('/data/promocion.json')
 //Añadir mas codigo aca de bajo sobre promocion.json
 // Cargar el JSON
 // Función para procesar un archivo JSON y extraer el objeto en el índice 1 de subcat1
-function procesarArchivo(jsonUrl, nombreId, tallaId, precioId, imagenId, descripcionId) {
+function procesarArchivo(jsonUrl, nombreId, tamañoId, precioId, imagenId, descripcionId) {
     fetch(jsonUrl)
       .then(response => response.json())
       .then(data => {
@@ -559,14 +560,14 @@ function procesarArchivo(jsonUrl, nombreId, tallaId, precioId, imagenId, descrip
   
         // Acceder a cada propiedad del producto de manera independiente
         const nombre = producto.nombre;
-        const talla = producto.talla;
+        const tamaño = producto.tamaño;
         const precio = producto.precio.toString(); // Convertir el precio a string
         const imagen = producto.imagen;
         const descripcion = producto.descripcion;
   
         // Insertar los valores en el HTML en los IDs proporcionados
         document.getElementById(nombreId).textContent = nombre;
-        document.getElementById(tallaId).textContent = talla ? `Talla: ${talla}` : 'Talla no disponible';
+        document.getElementById(tamañoId).textContent = tamaño ? `Tamaño: ${tamaño}` : 'Tamaño no disponible';
         document.getElementById(precioId).textContent = `S/.${precio}`; // Usar precio ya como string
         document.getElementById(imagenId).src = imagen;
         // document.getElementById(descripcionId).textContent = descripcion;
@@ -581,10 +582,10 @@ function procesarArchivo(jsonUrl, nombreId, tallaId, precioId, imagenId, descrip
   }
   
   // Llamar a la función para los 4 archivos JSON, pasando el URL del archivo y los IDs correspondientes
-  procesarArchivo('/data/cat1.json', 'nombre1', 'talla1', 'precio1', 'imagen1', );
-  procesarArchivo('/data/cat2.json', 'nombre2', 'talla2', 'precio2', 'imagen2', 'descripcion2');
-  procesarArchivo('/data/cat3.json', 'nombre3', 'talla3', 'precio3', 'imagen3', 'descripcion3');
-  procesarArchivo('/data/cat4.json', 'nombre4', 'talla4', 'precio4', 'imagen4', 'descripcion4');
+  procesarArchivo('/data/cat1.json', 'nombre1', 'tamaño1', 'precio1', 'imagen1', );
+  procesarArchivo('/data/cat2.json', 'nombre2', 'tamaño2', 'precio2', 'imagen2', 'descripcion2');
+  procesarArchivo('/data/cat3.json', 'nombre3', 'tamaño3', 'precio3', 'imagen3', 'descripcion3');
+  procesarArchivo('/data/cat4.json', 'nombre4', 'tamaño4', 'precio4', 'imagen4', 'descripcion4');
   
 
 /////////////////////////////////////////////////////////////////////

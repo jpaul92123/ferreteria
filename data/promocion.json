@@ -1,12 +1,11 @@
 {
-    "frase1": "¡ Envios GRATIS por compras mayores a S/100 !",
-    "frase2": "Aprovecha descuentos increíbles ",
-    "frase3": "¡ Aproveche la OFERTA  de 6 POLOS por S/.100 con Envio GRATIS",
-    "slide1": "/img/carousel-1.jpg",
-    "slide2": "/img/carousel-2.jpg",
-    "slide3": "/img/carousel-3.webp",
-    "oferta1": "/img/offer-1.png" ,
-    "oferta2": "/img/offer-2.png"
-    
-  }
-  
+  "frase1": "¡ Envios GRATIS por compras mayores a S/100 !",
+  "frase2": "Aprovecha descuentos increíbles ",
+  "frase3": "¡ Aproveche la OFERTA  de 6 POLOS por S/.100 con Envio GRATIS",
+  "frase4": "Herramientas y materiales de construcción, diseñados para ofrecer durabilidad y resistencia, con precios accesibles para proyectos de todo tipo, garantizando calidad en cada producto para nuestros clientes.",
+  "slide1": "/img/carousel-1.jpg",
+  "slide2": "/img/carousel-2.jpg",
+  "slide3": "/img/carousel-3.jpg",
+  "oferta1": "/img/offer-1.png",
+  "oferta2": "/img/offer-2.png"
+}

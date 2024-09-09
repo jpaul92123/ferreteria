@@ -1,97 +1,181 @@
 {
     "subcat1": [
         {
-            "nombre": "Polo sin diseño -Colores",
-            "talla": "S-M-L-XL",
-            "precio": 14,
-            "imagen": "/img/categoria/cat1/subcat1/1.webp",
-            "descripcion": "Polos 20/1 - reactivo - colores variados 100% algodon"
+            "nombre": "Bolsa de Cemento Andino Tipo V",
+            "tamaño": "42.5Kg",
+            "precio": 39.9,
+            "descripcion": "Bolsa de Cemento Andino Tipo -V- 42.5 Kilos Aprox",
+            "imagen": "/img/categoria/cat2/subcat1/1.webp"
         },
         {
-            "nombre": "Polo con diseño ",
-            "talla":"S-M-L-XL",
-            "precio": 19,
-            "descripcion": "Polo Reactivo con diseño- pida su diseño personalizado",
+            "nombre": "Bolsa Cemento Andino Premium",
+            "tamaño": "42.5Kg",
+            "precio": 32.5,
+            "descripcion": "Bolsa Cemento Andino Premium 42.5 Kilos Aprox",
             "imagen": "/img/categoria/cat2/subcat1/2.webp"
         },
         {
-            "nombre": "Polos Colores con diseño",
-            "talla": "S-M-L-XL",
-            "precio": 19,
-            "imagen": "/img/categoria/cat1/subcat1/3.webp",
-            "descripcion": "Polos 20/1 - reactivo - colores variados 100% algodon"
+            "nombre": "Bolsa de Cemento Andino Ultra ",
+            "tamaño": "42.5Kg",
+            "precio": 32,
+            "imagen": "/img/categoria/cat2/subcat1/3.webp",
+            "descripcion": "Bolsa de Cemento Andino Ultra 42.5 Kilos Aprox"
         },
         {
-            "nombre": "Polo con diseño ",
-            "talla":"S-M-L-XL",
-            "precio": 19,
-            "descripcion": "Polo Reactivo con diseño- pida su diseño personalizado",
-            "imagen": "/img/categoria/cat1/subcat1/2.webp"
+            "nombre": "Bolsa de Cemento APU",
+            "tamaño": "42.5Kg",
+            "precio": 27.8,
+            "descripcion": "Bolsa de Cemento APU 42.5KG APROX",
+            "imagen": "/img/categoria/cat2/subcat1/4.webp"
+        },
+        {
+            "nombre": "Bolsa de Cemento Sol ",
+            "tamaño": "42.5Kg",
+            "precio": 29.9,
+            "descripcion": "Bolsa de Cemento Sol 42.5 APROX",
+            "imagen": "/img/categoria/cat2/subcat1/5.webp"
+        },
+        {
+            "nombre": "Bolsa de Concrelisto 210",
+            "tamaño": "40Kg",
+            "precio": 12.9,
+            "descripcion": " Bolsa de Concrelisto 210- 40 Kilo",
+            "imagen": "/img/categoria/cat2/subcat1/6.webp"
+        },
+        {
+            "nombre": "Bolsa de Supermortero 40",
+            "tamaño": "40Kg",
+            "precio": 12.9,
+            "descripcion": "Bolsa de Supermortero 40",
+            "imagen": "/img/categoria/cat2/subcat1/7.webp"
+        },
+        {
+            "nombre": "Bolsa de Tarrajeolisto 40",
+            "tamaño": "40Kg",
+            "precio": 12.9,
+            "descripcion": "Bolsa de Tarrajeolisto 40",
+            "imagen": "/img/categoria/cat2/subcat1/8.webp"
+        },
+        {
+            "nombre": "Bolsa de Cemento Quisqueya Estructural",
+            "tamaño": "42.5Kg",
+            "precio": 27.5,
+            "descripcion": "Bolsa de Cemento Quisqueya Estructural 42.5",
+            "imagen": "/img/categoria/cat2/subcat1/9.webp"
+        },
+        {
+            "nombre": "Bolsa Cemento Quisqueya Uso General",
+            "tamaño": "42.5Kg",
+            "precio": 26,
+            "descripcion": "Bolsa Cemento Quisqueya Uso General 42.5",
+            "imagen": "/img/categoria/cat2/subcat1/10.webp"
+        },
+        {
+            "nombre": "Bolsa Cemento Quisqueya Uso Albañileria",
+            "tamaño": "42.5Kg",
+            "precio": 24,
+            "descripcion": "Bolsa Cemento Quisqueya Uso Albañileria",
+            "imagen": "/img/categoria/cat2/subcat1/11.webp"
         }
-   
     ],
     "subcat2": [
         {
-            "nombre": "Polo niño",
-            "talla": "2-4-6-8",
-            "precio": 15,
-            "imagen": "/img/ho-1.webp",
-             "descripcion": "100% Algodon "
-       },
- 
-    {
-            "nombre": "Polo de hombre estampado",
-            "talla": "S-M-L-XL",
-            "precio": 20,
-            "imagen": "/img/ni-2.webp",
-            "descripcion": "100% Algodon"
+            "nombre": "Ladrillos Caravista Pirámide",
+            "tamaño": "9x24x12",
+            "precio": 2.2,
+            "descripcion": "Ladrillos Caravista de 9 x 24 x 12 Pirámide ",
+            "imagen": "/img/categoria/cat2/subcat2/1.webp"
         },
         {
-            "nombre": "Polo de hombre blanco",
-            "talla": "S-M-L-XL",
-            "precio": 17,
-            "imagen": "/img/ni-3.webp",
-            "descripcion": "100% Algodon"
+            "nombre": "Ladrillos Caravista Pirámide",
+            "tamaño": "6x24x12",
+            "precio": 1.8,
+            "descripcion": "Ladrillos Caravista de 6 x 24 x 12 Pirámide ",
+            "imagen": "/img/categoria/cat2/subcat2/2.webp"
         },
         {
-            "nombre": "Polo niño",
-            "talla": "2-4-6-8",
-            "precio": 15,
-            "imagen": "/img/ni-4.webp",
-            "descripcion": "100% Algodon"
+            "nombre": " Ladrillos de Techo Pirámide",
+            "tamaño": "20x30x30",
+            "precio": 4.5,
+            "descripcion": "Ladrillos Caravista de 20 x 30 x 30 Pirámide ",
+            "imagen": "/img/categoria/cat2/subcat2/3.webp"
+        },
+        {
+            "nombre": " Ladrillo de Techo Pirámide",
+            "tamaño": "15x30x30",
+            "precio": 3,
+            "descripcion": "Ladrillo de Techo 15 x 30 x 30 Pirámide",
+            "imagen": "/img/categoria/cat2/subcat2/4.webp"
+        },
+        {
+            "nombre": "Ladrillos de TechoPirámide",
+            "tamaño": " 12x30x30 ",
+            "precio": 2.8,
+            "descripcion": "Ladrillos de Techo 12 x 30 x 30 Pirámide",
+            "imagen": "/img/categoria/cat2/subcat2/5.webp"
+        },
+        {
+            "nombre": "Ladrillos de TechoPirámide",
+            "tamaño": " 8x30x30 ",
+            "precio": 2.6,
+            "descripcion": "Ladrillos de Techo 8 x 30 x 30 Pirámide",
+            "imagen": "/img/categoria/cat2/subcat2/6.webp"
+        },
+        {
+            "nombre": "Ladrillos King Kong 18 Huecos Pirámide",
+            "tamaño": "18H",
+            "precio": 1.1,
+            "descripcion": "Ladrillos King Kong 18 Huecos Pirámide",
+            "imagen": "/img/categoria/cat2/subcat2/7.webp"
+        },
+        {
+            "nombre": "Ladrillos King Kong - MVF -18 Hueco",
+            "tamaño": "18H",
+            "precio": 0.9,
+            "descripcion": "Ladrillos King Kong - MVF -18 Hueco",
+            "imagen": "/img/categoria/cat2/subcat2/8.webp"
+        },
+        {
+            "nombre": "adrillo Pandereta C/ Raya Pirámide",
+            "tamaño": "6H",
+            "precio": 0.8,
+            "descripcion": "adrillo Pandereta C/ Raya Pirámide",
+            "imagen": "/img/categoria/cat2/subcat2/9.webp"
+        },
+        {
+            "nombre": "Ladrillos Pandereta C/ Raya Huachipa",
+            "tamaño": "6H",
+            "precio": 0.7,
+            "descripcion": "Ladrillos Pandereta C/ Raya Huachipa",
+            "imagen": "/img/categoria/cat2/subcat2/10.webp"
         }
+       
         
+
+      
     ],
     "subcat3": [
         {
-            "nombre": "Polo niño",
-            "talla": "2-4-6-8",
-            "precio": 15,
-            "imagen": "/img/mu-1.webp",
-            "descripcion": "100% Algodon"
+            "nombre": "Bolsa de Yeso Cerámico ",
+            "tamaño": "20Kl",
+            "precio": 26,
+            "descripcion": "Bolsa de Yeso Cerámico 20 Kilos",
+            "imagen": "/img/categoria/cat2/subcat3/1.webp"
         },
         {
-            "nombre": "Polo de hombre estampado",
-            "talla": "S-M-L-XL",
-            "precio": 20,
-            "imagen": "/img/mu-2.webp",
-            "descripcion": "100% Algodon"
+            "nombre": "Bolsa de Yeso de Construcción",
+            "tamaño": "15Kl",
+            "precio": 18,
+            "descripcion": "Bolsa de Yeso de Construcción 15 Kilos",
+            "imagen": "/img/categoria/cat2/subcat3/2.webp"
         },
         {
-            "nombre": "Polo de hombre blanco",
-            "talla": "S-M-L-XL",
-            "precio": 17,
-            "imagen": "/img/mu-3.webp",
-            "descripcion": "100% Algodon"
-        },
-        {
-            "nombre": "Polo niño",
-            "talla": "2-4-6-8",
-            "precio": 15,
-            "imagen": "/img/mu-4.webp",
-            "descripcion": "100% Algodon"
+            "nombre": "Kilo de Yeso Cerámico Losaro",
+            "tamaño": "1Kl",
+            "precio":3,
+            "descripcion": "Kilo de Yeso Cerámico Losaro",
+            "imagen": "/img/categoria/cat2/subcat3/3.webp"
         }
-        
+      
     ]
 }
-    

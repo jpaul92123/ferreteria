@@ -1,97 +1,71 @@
 {
     "subcat1": [
         {
-            "nombre": "Polo sin diseño -Colores",
-            "talla": "S-M-L-XL",
-            "precio": 14,
+            "nombre": "MT3 de Piedra Confitillo a GraneL",
+            "tamaño": "MT3",
+            "precio": 80,
             "imagen": "/img/categoria/cat1/subcat1/1.webp",
-            "descripcion": "Polos 20/1 - reactivo - colores variados 100% algodon"
+            "descripcion": "MT3 de Piedra Confitillo a GraneL"
         },
         {
-            "nombre": "Polo con diseño ",
-            "talla":"S-M-L-XL",
-            "precio": 19,
-            "descripcion": "Polo Reactivo con diseño- pida su diseño personalizado",
+            "nombre": "MT3 de Piedra Chancada 1/2 a Granel",
+            "tamaño": "MT3",
+            "precio": 75,
+            "descripcion": "MT3 de Piedra Chancada 1/2 a Granel",
             "imagen": "/img/categoria/cat1/subcat1/2.webp"
         },
         {
-            "nombre": "Polos Colores con diseño",
-            "talla": "S-M-L-XL",
-            "precio": 19,
+            "nombre": "Bolsa Piedra Confitillo",
+            "tamaño": "40K",
+            "precio": 4,
             "imagen": "/img/categoria/cat1/subcat1/3.webp",
-            "descripcion": "Polos 20/1 - reactivo - colores variados 100% algodon"
+            "descripcion": "Bolsa Piedra Confitillo 40Kl"
         },
         {
-            "nombre": "Polo con diseño ",
-            "talla":"S-M-L-XL",
-            "precio": 19,
-            "descripcion": "Polo Reactivo con diseño- pida su diseño personalizado",
-            "imagen": "/img/categoria/cat1/subcat1/2.webp"
+            "nombre": "Bolsa Piedra Chancada",
+            "tamaño": "40k",
+            "precio": 3.5,
+            "descripcion": "Bolsa Piedra Chancada 40k",
+            "imagen": "/img/categoria/cat1/subcat1/4.webp"
         }
-   
     ],
     "subcat2": [
         {
-            "nombre": "Polo niño",
-            "talla": "2-4-6-8",
-            "precio": 15,
-            "imagen": "/img/ho-1.webp",
-             "descripcion": "100% Algodon "
-       },
- 
-    {
-            "nombre": "Polo de hombre estampado",
-            "talla": "S-M-L-XL",
-            "precio": 20,
-            "imagen": "/img/ni-2.webp",
-            "descripcion": "100% Algodon"
+            "nombre": "MT3 de Arena Fina a GraneL",
+            "tamaño": "MT3",
+            "precio": 65,
+            "imagen": "/img/categoria/cat1/subcat2/1.webp",
+            "descripcion": "MT3 de Arena Fina a GraneL  "
         },
         {
-            "nombre": "Polo de hombre blanco",
-            "talla": "S-M-L-XL",
-            "precio": 17,
-            "imagen": "/img/ni-3.webp",
-            "descripcion": "100% Algodon"
+            "nombre": "MT3 de Arena Gruesa a GraneL",
+            "tamaño": "MT3",
+            "precio": 65,
+            "imagen": "/img/categoria/cat1/subcat2/2.webp",
+            "descripcion": "MT3 de Arena Gruesa a Grane"
         },
         {
-            "nombre": "Polo niño",
-            "talla": "2-4-6-8",
-            "precio": 15,
-            "imagen": "/img/ni-4.webp",
-            "descripcion": "100% Algodon"
+            "nombre": "Bolsa de Arena Gruesa",
+            "tamaño": "bolsa",
+            "precio": 3.5,
+            "imagen": "/img/categoria/cat1/subcat2/3.webp",
+            "descripcion": "Bolsa de Arena Gruesa"
+        },
+        {
+            "nombre": "Bolsa de arena Fina",
+            "tamaño": "bolsa",
+            "precio": 3.5,
+            "imagen": "/img/categoria/cat1/subcat2/4.webp",
+            "descripcion": "Bolsa de arena Fina"
         }
-        
     ],
     "subcat3": [
         {
-            "nombre": "Polo niño",
-            "talla": "2-4-6-8",
-            "precio": 15,
-            "imagen": "/img/mu-1.webp",
-            "descripcion": "100% Algodon"
-        },
-        {
-            "nombre": "Polo de hombre estampado",
-            "talla": "S-M-L-XL",
-            "precio": 20,
-            "imagen": "/img/mu-2.webp",
-            "descripcion": "100% Algodon"
-        },
-        {
-            "nombre": "Polo de hombre blanco",
-            "talla": "S-M-L-XL",
-            "precio": 17,
-            "imagen": "/img/mu-3.webp",
-            "descripcion": "100% Algodon"
-        },
-        {
-            "nombre": "Polo niño",
-            "talla": "2-4-6-8",
-            "precio": 15,
-            "imagen": "/img/mu-4.webp",
-            "descripcion": "100% Algodon"
+            "nombre": "MT3 de Afirmado a GraneL",
+            "tamaño": "MT3",
+            "precio": 60,
+            "imagen": "/img/categoria/cat1/subcat3/1.webp",
+            "descripcion": "MT3 de Afirmado a GraneL"
         }
-        
     ]
 }
-    

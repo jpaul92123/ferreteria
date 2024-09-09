@@ -1,33 +1,43 @@
 [
     {
-        "nombre": "POLOS",
+        "nombre": "AGREGADOS",
         "url": "/categoria/cat1.html",
         "imagen": "/img/img-cat1.webp"
     },
     {
-        "nombre": "POLERAS",
+        "nombre": "CONSTRUCCION",
         "url": "/categoria/cat2.html",
         "imagen": "/img/img-cat2.webp"
     },
     {
-        "nombre": "CHOMPAS",
+        "nombre": "FIERROS",
         "url": "/categoria/cat3.html",
         "imagen": "/img/img-cat3.webp"
     },
     {
-        "nombre": "JOGUERS",
+        "nombre": "ACABADOS",
         "url": "/categoria/cat4.html",
         "imagen": "/img/img-cat4.webp"
     }
     ,
     {
-        "nombre": "SHORTS",
+        "nombre": "ACABADOS",
         "url": "/categoria/cat5.html",
         "imagen": "/img/img-cat5.webp"
     }
     ,
     {
-        "nombre": "PANTALONES",
+        "nombre": "PLOMERIA",
+        "url": "/categoria/cat6.html",
+        "imagen": "/img/img-cat6.webp"
+    },
+    {
+        "nombre": "PLOMERIA",
+        "url": "/categoria/cat6.html",
+        "imagen": "/img/img-cat6.webp"
+    },
+    {
+        "nombre": "PLOMERIA",
         "url": "/categoria/cat6.html",
         "imagen": "/img/img-cat6.webp"
     }
