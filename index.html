@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>FERRTERIA ZEUS-Inicio</title>
+    <title>ZEUS-Inicio</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="Free HTML Templates" name="keywords" />
     <meta content="Free HTML Templates" name="description" />
@@ -20,17 +20,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
 
     <!-- Libraries Stylesheet -->
-    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <!-- Customized Bootstrap Stylesheet -->
+
+    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="/css/custom-carousel.css">
     <link rel="stylesheet" href="/css/stylesmenu.css">
+    <link rel="stylesheet" href="/css/modal.css">
     <link href="/css/style.css" rel="stylesheet" />
-
-
 </head>
 
 <body>
@@ -45,36 +43,35 @@
             <div class="col-lg-3 d-none d-lg-block">
                 <a href="/index.html" class="text-decoration-none">
                     <h1 class="m-0 display-5 font-weight-semi-bold">
-                        <span class=" font-weight-bold border px-3 mr-1"
-                            style="z-index: 9; color: black;">FERRTERIA</span><br>
-                        <span class="text-primary">ZEUS</span>
+                        <!-- <span class=" font-weight-bold border px-3 mr-1" style="z-index: 9; color: black;">FERRETERIA</span><br> -->
+                        <img style="width: 70%;" src="/img/logo.svg" alt="">
+                        <!-- <span class="text-primary">FERRETERIA</span> -->
                     </h1>
                 </a>
             </div>
         </div>
     </div>
-
     <!-- Topbar End -->
 
-    <!-- Menú desplegable Celulares-->
+    <!-- Menú desplegable Celulares -->
     <nav id="navbar-scrol" class="navbar-scrol">
         <a href="/index.html" class="text-decoration-none d-block d-lg-none">
             <h1 class="m-0 display-5 font-weight-semi-bold">
-                <span class="text-primary font-weight-bold border px-3 mr-1" style="z-index: 9;">FERRETERIA</span><br>
-                <span class="">ZEUS</span>
+                <!-- <span class="text-primary font-weight-bold border px-3 mr-1" style="z-index: 9;">FERRETERIA</span><br>
+              <span class="">-EG-</span> -->
+                <img style="width: 40%;" src="/img/logo2.svg" alt="">
             </h1>
         </a>
         <a class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i> Menú</a>
         <ul class="menu">
             <li><a href="#"><i class="fas fa-home"></i><span style="font-weight: 700; color: #e8bf0a"> Inicio</span></a>
             </li>
-            <li><a href="/stock.html"><i class="fas fa-warehouse"></i>Todo el Stock</a></li>
-            <li class="has-submenu">
-                <a href=""><i class="fas fa-th-large"></i> Categoría</a>
-                <ul class="submenu">
-                    <ul id="menu-categorias2" class="submenu overflow-hidden text-category " style="height: 410px">
-                    </ul>
-                </ul>
+            <li><a href="/store.html"><i class="fas fa-warehouse"></i> Tienda</a></li>
+            <li><a href=""><i class="fas fa-th-large"></i> Categoría</a></li>
+            <li class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0"
+                id="navbar-vertical">
+                <!-- Menú multi-nivel siempre visible -->
+                <ul class=" submenu " id="menuPrincipal2"></ul>
             </li>
         </ul>
         <p class="enviosgratis">
@@ -85,25 +82,29 @@
     </nav>
 
     <!-- Navbar Start -->
-    <div class="container-fluid ">
+    <div class="container-fluid">
         <div class="row border-top px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100"
                     data-toggle="collapse" href="#navbar-vertical"
                     style="height: 65px; margin-top: -1px; padding: 0 30px">
-                    <h6 class="m-0"><i class="fas fa-th-large"></i> Categorias</h6>
+                    <h6 class="m-0"><i class="fas fa-th-large"></i> Categorías</h6>
                     <i class="fa fa-angle-down text-dark"></i>
                 </a>
                 <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0"
                     id="navbar-vertical">
-                    <ul id="menu-categorias" class="submenu overflow-hidden text-category " style="height: 410px">
-                    </ul>
+
+                    <!-- Menú multi-nivel siempre visible -->
+
+                    <ul class="dropdown-menu show submenu " style="height: 410px" aria-labelledby="dropdownMenu"
+                        id="menuPrincipal"></ul>
+
                 </nav>
             </div>
-            <!-- CONTENIDO CUERPO DE LA GALERIA -->
+
+            <!-- CONTENIDO CUERPO DE LA PAGINA -->
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -111,9 +112,9 @@
                         <div class="navbar-nav mr-auto py-0">
                             <a href="/index.html" class="nav-item nav-link active"><i class="fas fa-home"></i>
                                 Inicio</a>
-                            <a href="/stock.html" class="nav-item nav-link "><i class="fas fa-warehouse"></i> Stock</a>
+                            <a href="/store.html" class="nav-item nav-link"><i class="fas fa-warehouse"></i> Tienda</a>
                             <a href="/contact.html" class="nav-item nav-link"><i class="fas fa-phone"></i>
-                                Contactenos</a>
+                                Contáctenos</a>
                         </div>
                         <div class="row py-2 px-xl-5">
                             <div class="col-lg-3 text-right text-lg-right">
@@ -128,9 +129,10 @@
                             </div>
                         </div>
                     </div>
-                </nav><br><br><br>
+                </nav>
+                <br><br><br>
                 <div id="header-carousel" class="carousel slide" data-ride="carousel">
-                    <div class="col-lg-6  text-left">
+                    <div class="col-lg-6 text-left">
                         <form action="">
                             <div class="input-group">
                                 <input type="text" id="buscador" class="form-control" placeholder="Buscar producto..."
@@ -142,9 +144,19 @@
                                 </div>
                             </div>
                         </form>
-                    </div> <!-- Cuerpo del buscador -->
+
+                        <button id="filterButton"
+                            style=" font-size: 12px; margin-top: 4px; display: flex; align-items: center; gap: 1px;">
+                            <i class="fas fa-filter"></i>Filtrar
+                        </button>
+
+                    </div>
+
                     <div id="resultados" class="container overlay overlay-content"></div>
-                    <!-- fin Cuerpo del buscador -->
+                    <div class="row mt-4" id="galeriaProductos"></div>
+
+
+                    <!-- cuerpo del slide -->
                     <section id="defaultOpen">
                         <div id="header-carousel" class="carousel slide" data-ride="carousel">
                             <!-- Cuerpo del buscador -->
@@ -159,10 +171,10 @@
                                             <h3 class="text-light  font-weight-medium mb-3">
                                                 Arena Fina,Gruesa ,Piedra chanacada y mas!
                                             </h3>
-                                             <h3 class="display-4 text-white font-weight-semi-bold mb-4">
+                                            <h3 class="display-4 text-white font-weight-semi-bold mb-4">
                                                 AGREGADOS
                                             </h3>
-                                            <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Ver Ahora</a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -177,7 +189,7 @@
                                             <h3 class="display-4 text-white font-weight-semi-bold mb-4">
                                                 CONSTRUCCION
                                             </h3>
-                                            <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Ver Ahora</a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -192,7 +204,7 @@
                                             <h3 class="display-4 text-white font-weight-semi-bold mb-4">
                                                 TRANSPORTE
                                             </h3>
-                                            <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Ver Ahora</a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -210,170 +222,123 @@
                         </div>
 
                     </section>
-
+                    <!-- fin del cuerpo del slide -->
 
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Featured End -->
-    <!-- Featured Start -->
-
-    <!-- Featured End -->
-
-
-    <!-- Productos Section -->
-    <div class="container-fluid py-5">
+    <div class=" container container-fluid py-3">
         <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">CATEGORIA</span></h2>
+            <h2 class="section-title px-5"><span class="px-2">Categorías</span></h2>
         </div>
-        <div class="row px-xl-5">
-            <div class="col">
-                <div class="owl-carousel custom-carousel" id="custom-carousel">
-                    <!-- Productos cargados dinámicamente con JavaScript -->
-                </div>
-            </div>
+        <div class="owl-carousel owl-theme" id="categories-carousel">
+            <!-- Las categorías se cargarán aquí dinámicamente -->
         </div>
     </div>
 
+    <!-- Featured End -->
     <div class="marquee">
         <span id="frase3"></span>
     </div>
-    <!-- Categories End -->
+
+    <!-- modal para el filtrado  -->
+    <!-- Modal de filtrado -->
+    <div id="filterModal"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1000;">
+        <div
+            style="position: absolute; top: 50%; left: 50%; width: 80%; transform: translate(-50%, -50%); background: rgb(241, 237, 237); padding: 20px; border-radius: 5px;">
+            <h2>Filtrar Productos</h2>
+            <label for="subcategoryFilter">Subcategoría:</label>
+            <select id="modalSubcategoryFilter">
+                <option value="">Todas</option>
+            </select>
+            <br><br>
+            <button id="applyFilter">Aplicar Filtro</button>
+
+            <!-- Contenedor para los productos en el modal -->
+            <div id="modalProductList"></div>
+            <!-- Contenedor para la paginación en el modal -->
+            <div id="modalPagination"><button id="closeModal">Cerrar</button></div>
+        </div>
+
+
+    </div><br>
+
+    <!-- oferta de productos  -->
+
     <div class="container-fluid offer pt-5">
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">Nuestras Ofertas</span></h2>
+        </div>
         <div class="row px-xl-5">
+            <!-- Categoria AGREGADOS -->
             <div class="col-md-6 pb-4">
                 <div class="position-relative bg-secondary text-center text-md-right text-white mb-2 py-5 px-5">
                     <img id="oferta1" class="img-fluid" src="" alt="Image" />
                     <div class="position-relative" style="z-index: 1">
                         <h5 class="text-uppercase text-primary mb-3">
-                            10% off the all order
+                            10% de descuento en todos los productos
                         </h5>
-                        <h1 class="mb-4 font-weight-semi-bold">Oferta en Polos</h1>
-                        <a href="categoria/cat1.html" class="btn btn-outline-primary py-md-2 px-md-3">Ver Ahora</a>
+                        <h1 class="mb-4 font-weight-semi-bold">Oferta en Herramientas</h1>
+                        <a href="#" id="btn-agregados" class="btn btn-outline-primary py-md-2 px-md-3 ver-ahora">Ver
+                            Ahora</a>
                     </div>
                 </div>
             </div>
+
+            <!-- Categoria CONSTRUCCION -->
             <div class="col-md-6 pb-4">
                 <div class="position-relative bg-secondary text-center text-md-left text-white mb-2 py-5 px-5">
                     <img id="oferta2" class="img-fluid" src="" alt="Image" />
                     <div class="position-relative" style="z-index: 1">
                         <h5 class="text-uppercase text-primary mb-3">
-                            10% off the all order
+                            10% de descuento en construcción
                         </h5>
-                        <h1 class="mb-4 font-weight-semi-bold">Oferta en Poleras</h1>
-                        <a href="categoria/cat2.html" class="btn btn-outline-primary py-md-2 px-md-3">Ver Ahora</a>
+                        <h1 class="mb-4 font-weight-semi-bold">Oferta en Construcción</h1>
+                        <a href="#" id="btn-construccion" class="btn btn-outline-primary py-md-2 px-md-3 ver-ahora">Ver
+                            Ahora</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Mas Solicitado -->
-    <div class="container-fluid pt-5">
-        <div class="text-center mb-4">
-            <h2 class="section-title px-5">
-                <span class="px-2">Productos mas Solicitados</span>
-            </h2>
-        </div>
-        <div class="row px-xl-5 pb-3">
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-sm-sm pb-1">
-                <div id="contenedor1" class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" id="imagen1" alt="Imagen del producto"></a>
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 id="nombre1" class="text-truncate mb-3"></h6>
-                        <p id="tamaño1"></p>
-                        <div class="d-flex justify-content-center">
-                            <h3 id="precio1"></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-sm-sm pb-1">
-                <div id="contenedor2" class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" id="imagen2" alt="Imagen del producto"></a>
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 id="nombre2" class="text-truncate mb-3"></h6>
-                        <p id="tamaño2"></p>
-                        <div class="d-flex justify-content-center">
-                            <h3 id="precio2"></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-sm-sm pb-1">
-                <div id="contenedor3" class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" id="imagen3" alt="Imagen del producto"></a>
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 id="nombre3" class="text-truncate mb-3"></h6>
-                        <p id="tamaño3"></p>
-                        <div class="d-flex justify-content-center">
-                            <h3 id="precio3"></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-sm-sm pb-1">
-                <div id="contenedor4" class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" id="imagen4" alt="Imagen del producto"></a>
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 id="nombre4" class="text-truncate mb-3"></h6>
-                        <p id="tamaño4"></p>
-                        <div class="d-flex justify-content-center">
-                            <h3 id="precio4"></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-
+    <div class="text-center mb-4">
+        <h2 class="section-title px-5"><span class="px-2">Encuentros en el Mapa</span></h2>
     </div>
+    <!-- Div donde se mostrará el mapa -->
+    <div id="map" style="height: 500px; width: 100%;"></div>
+
 
     <!-- Footer Start -->
-    <div class=" bg-secondary text-dark mt-1 pt-5">
+    <div class="bg-secondary text-dark mt-1 pt-5">
         <div class="container-fluid">
             <div>
                 <a href="/index.html" class="text-decoration-none">
                     <h1 class="m-0 display-5 font-weight-semi-bold">
-                        <span class="text-primary font-weight-bold border px-3 mr-1"
-                            style="z-index: 9;">FERRETERIA</span><br>
-                        <span class="">zeus</span>
+                        <!-- <span class=" font-weight-bold border px-3 mr-1" style="z-index: 9; color: black;">FERRETERIA</span><br> -->
+                        <img style="width: 20%;" src="/img/logo2.svg" alt="">
+                        <!-- <span class="text-primary">FERRETERIA</span> -->
                     </h1>
-                </a>
-                <p style="color:white" id="frase4"></p>
+                </a><br>
+                <p style="color:white"><span id="frase4"></span></p>
             </div>
-
             <div style="color:white">
                 <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i><span id="direccion"></span></p>
                 <p class="mb-2"> <i class="fa fa-envelope text-primary mr-3"></i><span id="correo2"></span></p>
                 <p class="mb-2"> <i class="fa fa-phone text-primary mr-3"></i><span id="telefono"></span></p>
             </div>
-
         </div>
-
-
-
         <div class="row border-top border-light mx-xl-5 py-4">
             <div class="col-md-6 px-xl-0">
                 <p class="mb-md-0 text-center text-md-left text-dark">
                     <span style="color:white">&copy;</span>
                     <a class="text-dark font-weight-semi-bold" href="#"><span
-                            style="color:white">FERRETERIA-ZEUS</span></a><span style="color:white">.Todos los derechos
-                        reservados.Diseñado por</span>
-                    <a class="text-dark font-weight-semi-bold" href="#"><span style="color:white">SINTI CORP SAC</span>
-                    </a>
+                            style="color:white">SINTTEX</span></a><span style="color:white">. Todos los derechos
+                        reservados. Diseñado por</span>
+                    <a class="text-dark font-weight-semi-bold" href="#"><span style="color:white">SINTI CORP
+                            SAC</span></a>
                 </p>
             </div>
             <div class="col-md-6 px-xl-0 text-center text-md-right">
@@ -381,12 +346,12 @@
             </div>
         </div>
     </div>
-
-
     <!-- Footer End -->
+
     <div id="whatsapp-icon">
         <img src="" alt="" id="whatsapp-img">
     </div>
+
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
@@ -394,21 +359,15 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="/lib/easing/easing.min.js"></script>
-    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="/js/custom-carousel.js"></script>
-    <!-- Template Javascript -->
-    <script src="/js/main.js"></script>
-    <script src="/js/script.js"></script>
-    <script src="/js/menu-categorias.js"></script>
-    <script>
-        if (window.location.pathname.endsWith('/stock') || window.location.pathname.endsWith('/index')) {
-            window.location.href = window.location.pathname + '.html';
-        }
 
-    </script>
+    <script src="/js/menu-categorias.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzaEBPLWMD10QwCCqpQNprduOxRDNSNQI" async
+        defer></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/modalFiltrar.js"></script>
+   
 
 </body>
 

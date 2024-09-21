@@ -1,78 +1,68 @@
-document.addEventListener('DOMContentLoaded', function () {
-    fetch('/data/categorias.json')
+document.addEventListener('DOMContentLoaded', () => {
+    // Cargar el archivo dbProductos.json
+    fetch('/data/dbProductos.json')
         .then(response => response.json())
         .then(data => {
-            const carousel = document.getElementById('custom-carousel');
+            // Cargar el archivo imagenCategoria.json
+            fetch('/data/imagenCategoria.json')
+                .then(response => response.json())
+                .then(imagenData => {
+                    const container = document.getElementById('categories-carousel');
 
-            data.forEach(item => {
-                const productCard = document.createElement('div');
-                productCard.className = 'card custom-carousel-item border-0';
+                    // Iterar sobre las categorías en dbProductos.json
+                    Object.keys(data).forEach((categoria) => {
+                        const categoryData = data[categoria];
 
-                productCard.innerHTML = `
-                    <a href="${item.url}">
-                        <div class="card-header custom-carousel-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="${item.imagen}" alt="${item.nombre}">
-                            <div class="custom-carousel-overlay">
-                                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                                    <h2 class="mb-3" style="color:white; text-transform:uppercase;">${item.nombre}</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                `;
+                        // Verificar si la categoría tiene una imagen en imagenCategoria.json
+                        const imagenCategoria = imagenData[categoria]?.imagen || '/img/default.webp'; // Imagen por defecto si no hay coincidencia
 
-                carousel.appendChild(productCard);
-            });
-
-            // Inicializa el carrusel de Owl Carousel con autoplay
-            const owlCarousel = $('.owl-carousel').owlCarousel({
-                loop: true,
-                margin: 10,
-                nav: true,
-                rtl: false, // Esto permite que el carrusel se desplace hacia la izquierda
-                autoplay: true, // Activa el autoplay
-                autoplayTimeout: 2300, // Cambia cada 2.3 segundos
-                autoplayHoverPause: true, // Pausa el autoplay al pasar el mouse
-                responsive: {
-                    0: {
-                        items: 2 // Muestra 2 elementos en pantallas pequeñas
-                    },
-                    600: {
-                        items: 3
-                    },
-                    1000: {
-                        items: 4
-                    }
-                }
-            });
-            $('.owl-carousel').on('changed.owl.carousel', function(event) {
-                const activeItem = document.querySelector('.owl-item.active .custom-carousel-img');
-            
-                if (activeItem) {
-                    // Remover la clase "hover-simulated" de todos los elementos
-                    document.querySelectorAll('.custom-carousel-img').forEach(item => {
-                        item.classList.remove('hover-simulated');
+                        // Crear el div de cada categoría
+                        const categoryDiv = document.createElement('div');
+                        categoryDiv.classList.add('category-item');
+                        categoryDiv.innerHTML = `
+                            <a class="custom-carousel-item" href="#" data-category="${categoria}">
+                                <img class="custom-carousel-item" src="${imagenCategoria}" alt="${categoria}">
+                                <h2>${categoria}</h2>
+                            </a>
+                        `;
+                        container.appendChild(categoryDiv);
                     });
-            
-                    // Añadir la clase al slide activo
-                    activeItem.classList.add('hover-simulated');
-                }
-            });
-            
 
-            // Simular hover cuando el slide cambie
-            owlCarousel.on('changed.owl.carousel', function(event) {
-                // Obtener el slide activo
-                const activeItem = document.querySelector('.owl-item.active .custom-carousel-img');
+                    // Inicializar el carrusel de Owl Carousel
+                    $('.owl-carousel').owlCarousel({
+                        loop: true,
+                        margin: 10,
+                        nav: true,
+                        rtl: false,
+                        autoplay: true,
+                        autoplayTimeout: 1500,
+                        autoplayHoverPause: true,
+                        responsive: {
+                            0: {
+                                items: 2
+                            },
+                            600: {
+                                items: 3
+                            },
+                            1000: {
+                                items: 4
+                            }
+                        }
+                    });
 
-                // Remover el hover simulado de otros slides
-                document.querySelectorAll('.custom-carousel-img').forEach(item => {
-                    item.classList.remove('hover-simulated');
-                });
-
-                // Añadir la clase que simula el hover al slide activo
-                activeItem.classList.add('hover-simulated');
-            });
+                    // Evento de click en las categorías
+                    document.querySelectorAll('.custom-carousel-item').forEach(item => {
+                        item.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            const categoria = this.getAttribute('data-category');
+                            // Guardar la categoría seleccionada en localStorage
+                            localStorage.setItem('categoriaSeleccionada', categoria);
+                            // Redirigir a productosTotales.html
+                            window.location.href = 'productosTotales.html';
+                        });
+                    });
+                })
+                .catch(error => console.error('Error al cargar imagenCategoria.json:', error));
         })
-        .catch(error => console.error('Error al cargar el JSON:', error));
+        .catch(error => console.error('Error al cargar dbProductos.json:', error));
 });

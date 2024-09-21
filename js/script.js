@@ -105,20 +105,24 @@
 
 // CARGAR INFORMACION DEL JSON*******
 
-let productos = [];
+let productos = []; // Lista global de productos
 
-// Función para cargar un archivo JSON dado su nombre y agregar los productos al array principal
-function cargarJSON(nombreArchivo) {
-    return fetch(`/data/${nombreArchivo}?v=1.0`)
+// Función para cargar los productos desde el JSON y unificarlos
+function cargarProductos() {
+    fetch('data/dbProductos.json')
         .then(response => response.json())
         .then(data => {
-            // Agregar los productos al array principal
-            productos.push(...Object.values(data).flat());
+            // Recorrer las categorías y subcategorías para unificar todos los productos en un solo array
+            Object.keys(data).forEach(categoria => {
+                Object.keys(data[categoria]).forEach(subcategoria => {
+                    productos = productos.concat(data[categoria][subcategoria].productos);
+                });
+            });
         })
-        .catch(error => console.error('Error al cargar el archivo JSON:', error));
+        .catch(error => console.error('Error al cargar el JSON:', error));
 }
 
-// Función para buscar productos en el array cargado
+// Función para buscar productos
 function buscarProducto() {
     const query = document.getElementById('buscador').value.toLowerCase();
     const resultados = document.getElementById('resultados');
@@ -128,6 +132,7 @@ function buscarProducto() {
         return; // Si el input está vacío, no mostrar resultados
     }
 
+    // Filtrar productos que coincidan con la consulta
     const resultadosFiltrados = productos.filter(producto =>
         producto.nombre.toLowerCase().includes(query) ||
         (producto.tamaño && producto.tamaño.toLowerCase().includes(query)) ||
@@ -150,14 +155,14 @@ function buscarProducto() {
                     <strong>${producto.nombre}</strong>
                     <p>Tamaño: ${producto.tamaño || 'N/A'}</p>
                     <p>Descripción: ${producto.descripcion || 'N/A'}</p>
-                    <strong>Precio: S/. ${producto.precio.toFixed(2)}</strong><br>
+                    <strong>Precio: S/${producto.precio.toFixed(2)}</strong><br>
                     <a class="ver-producto whatsapp-link" href="${whatsappLink}" target="_blank">Comprar</a>
                 </div>
             `;
             // Agregar evento de clic en la imagen
             divProducto.querySelector('img').addEventListener('click', function () {
                 localStorage.setItem('productoSeleccionado', JSON.stringify(producto));
-                window.location.href = '/detalleProducto.html'; // Redirige a la página de detalles del producto
+                window.location.href = 'detalleProducto.html'; // Redirige a la página de detalles del producto
             });
 
             resultados.appendChild(divProducto);
@@ -165,229 +170,39 @@ function buscarProducto() {
     }
 }
 
+// Cargar productos cuando se carga la página
+window.onload = function () {
+    cargarProductos();
+};
+
 
 
 // Función para crear el HTML de un producto
-    function createProductItem(product) {
-        // Define el enlace de WhatsApp
-        const nombreFormateado = encodeURIComponent(`Me interesa el producto ${product.nombre}`);
-        const whatsappLink = `https://wa.me/959984541?text=${nombreFormateado}`;
-    
-        return `
+function createProductItem(product) {
+    // Define el enlace de WhatsApp
+    const nombreFormateado = encodeURIComponent(`Me interesa el producto ${product.nombre}`);
+    const whatsappLink = `https://wa.me/959984541?text=${nombreFormateado}`;
+
+    return `
             <div class=" gallery-item">
                 <img src="${product.imagen || 'default-image.jpg'}" alt="${product.nombre}" onerror="imagenError(this)" class="img-producto" onclick="verDetalles('${encodeURIComponent(JSON.stringify(product))}')">
                 <div class="">
                     <strong>${product.nombre}</strong>
                     <p>Tamaño: ${product.tamaño || 'N/A'}</p>
-                    <strong style="color:red">S/. ${product.precio.toFixed(2)}</strong><br>
+                    <strong style="color:red"> S/${product.precio.toFixed(2)}</strong><br>
                     <a class="ver-producto whatsapp-link" href="${whatsappLink}" target="_blank">Whatapp</a>
                 </div>
             </div>
         `;
-    }
-    function verDetalles(productoEncoded) {
-        const producto = JSON.parse(decodeURIComponent(productoEncoded));
-        localStorage.setItem('productoSeleccionado', JSON.stringify(producto));
-        window.location.href = '/detalleProducto.html'; // Redirige a la página de detalles del producto
-    }
-    
-    
-
-// Función para cargar la galería de productos desde un archivo JSON específico
-function cargarGaleria(nombreArchivo) {
-    return fetch(`/data/${nombreArchivo}?v=1.0`)
-        .then(response => response.json())
-        .then(products => {
-            const subcat1Gallery = document.getElementById('subcat1-gallery');
-            const subcat2Gallery = document.getElementById('subcat2-gallery');
-            const subcat3Gallery = document.getElementById('subcat3-gallery');
-
-            // Limpiar el contenido actual de las galerías
-            if (subcat1Gallery) subcat1Gallery.innerHTML = '';
-            if (subcat2Gallery) subcat2Gallery.innerHTML = '';
-            if (subcat3Gallery) subcat3Gallery.innerHTML = '';
-
-            // Llenar la galería de cada categoría si existen en el JSON
-            if (products.subcat1) {
-                products.subcat1.forEach(product => {
-                    subcat1Gallery.innerHTML += createProductItem(product);
-                });
-            }
-
-            if (products.subcat2) {
-                products.subcat2.forEach(product => {
-                    subcat2Gallery.innerHTML += createProductItem(product);
-                });
-            }
-
-            if (products.subcat3) {
-                products.subcat3.forEach(product => {
-                    subcat3Gallery.innerHTML += createProductItem(product);
-                });
-            }
-        })
-        .catch(error => console.error('Error al cargar el JSON:', error));
 }
-
-// Determina el archivo JSON a cargar según el archivo HTML
-document.addEventListener('DOMContentLoaded', () => {
-    // Obtener el nombre del archivo HTML actual y agregar la extensión si no está presente
-    let htmlFileName = window.location.pathname.split('/').pop();
-    if (!htmlFileName.endsWith('.html')) {
-        htmlFileName += '.html';
-    }
-
-    // Determinar el archivo JSON según el archivo HTML
-    let jsonFileName = '';
-
-    switch (htmlFileName) {
-        case 'cat1.html':
-            jsonFileName = 'cat1.json';
-            break;
-        case 'cat2.html':
-            jsonFileName = 'cat2.json';
-            break;
-        case 'cat3.html':
-            jsonFileName = 'cat3.json';
-            break;
-        case 'cat4.html':
-            jsonFileName = 'cat4.json';
-            break;
-        case 'cat5.html':
-            jsonFileName = 'cat5.json';
-            break;
-        case 'cat6.html':
-            jsonFileName = 'cat6.json';
-            break;
-        default:
-            console.error('No se encontró un archivo JSON correspondiente para este HTML.');
-            return;
-    }
-
-    // Cargar el JSON y la galería correspondiente
-    cargarGaleria(jsonFileName);
-});
-
-// Cargar todos los archivos JSON antes de habilitar el buscador
-Promise.all([
-    cargarJSON('cat1.json'),
-    cargarJSON('cat2.json'),
-    cargarJSON('cat3.json'),
-    cargarJSON('cat4.json'),
-    cargarJSON('cat5.json'),
-    cargarJSON('cat6.json')
-    // cargarJSON('cat#.json'); // Descomentar si necesitas cargar otro archivo
-
-]).then(() => {
-    // Los productos están cargados, ahora se puede buscar
-    console.log('Todos los productos han sido cargados');
-    // Aquí podrías habilitar el buscador o notificar al usuario que puede buscar productos
-});
-
-
-if (window.location.pathname.endsWith('stock.html')) {
-
-    // Función para cargar la galería de productos desde un archivo JSON específico
-    function cargarGaleria(nombreArchivo) {
-        return fetch(`/data/${nombreArchivo}?v=1.0`) // Ruta relativa a stock.html
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Error al cargar el archivo ${nombreArchivo}: ${response.statusText}`);
-                }
-                return response.json();
-            })
-            .then(products => {
-                const subcat1Gallery = document.getElementById('subcat1-gallery');
-                const subcat2Gallery = document.getElementById('subcat2-gallery');
-                const subcat3Gallery = document.getElementById('subcat3-gallery');
-
-                if (subcat1Gallery && products.subcat1) {
-                    products.subcat1.forEach(product => {
-                        subcat1Gallery.innerHTML += createProductItem(product);
-                    });
-                }
-
-                if (subcat2Gallery && products.subcat2) {
-                    products.subcat2.forEach(product => {
-                        subcat2Gallery.innerHTML += createProductItem(product);
-                    });
-                }
-
-                if (subcat3Gallery && products.subcat3) {
-                    products.subcat3.forEach(product => {
-                        subcat3Gallery.innerHTML += createProductItem(product);
-                    });
-                }
-            })
-            .catch(error => console.error('Error al cargar el JSON:', error));
-    }
-
-    // Cargar las galerías
-    cargarGaleria('cat1.json');
-    cargarGaleria('cat2.json');
-    cargarGaleria('cat3.json');
-    cargarGaleria('cat4.json');
-    cargarGaleria('cat5.json');
-    cargarGaleria('cat6.json');
-    // cargarGaleria('cat#.json'); // Descomentar si necesitas cargar otro archivo
-
-}
-
-// MENU CATEGORIA DE PRODUCTOS ********
-
-
-// PRIMERO:::::::::::::::::::::::::
-
-function openPage(pageName, elmnt, color) {
-    // Hide all elements with class="tabcontent" by default */
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-    // Remove the background color of all tablinks/buttons
-    tablinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].style.backgroundColor = "";
-    }
-
-    // Show the specific tab content
-    document.getElementById(pageName).style.display = "block";
-
-    // Add the specific color to the button used to open the tab content
-    elmnt.style.backgroundColor = color;
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-
-// SEGUNDO::::::::::::::::::::::
-
-function openPage2(pageName, elmnt, color) {
-    // Hide all elements with class="tabcontent" by default */
-    var i, tabcontent2, tablinks2;
-    tabcontent2 = document.getElementsByClassName("tabcontent2");
-    for (i = 0; i < tabcontent2.length; i++) {
-        tabcontent2[i].style.display = "none";
-    }
-
-    // Remove the background color of all tablinks/buttons
-    tablinks2 = document.getElementsByClassName("tablink2");
-    for (i = 0; i < tablinks2.length; i++) {
-        tablinks2[i].style.backgroundColor = "";
-    }
-
-    // Show the specific tab content
-    document.getElementById(pageName).style.display = "block";
-
-    // Add the specific color to the button used to open the tab content
-    elmnt.style.backgroundColor = color;
+function verDetalles(productoEncoded) {
+    const producto = JSON.parse(decodeURIComponent(productoEncoded));
+    localStorage.setItem('productoSeleccionado', JSON.stringify(producto));
+    window.location.href = '/detalleProducto.html'; // Redirige a la página de detalles del producto
 }
 
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+
 
 /*********************************************************/
 
@@ -425,12 +240,7 @@ document.addEventListener('DOMContentLoaded', function () {
         menu.classList.toggle('showm');
     });
 
-    // Mostrar/ocultar el submenú en pantamaños pequeñas
-    submenuToggle.addEventListener('click', function (e) {
-        e.preventDefault();
-        const submenu = submenuToggle.nextElementSibling;
-        submenu.classList.toggle('showm');
-    });
+
 });
 
 
@@ -479,15 +289,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     buscarProducto();
     const producto = JSON.parse(localStorage.getItem('productoSeleccionado'));
 
 
     if (producto) {
-        // Verifica que whatsappLink esté definido
-        const whatsappLink = producto.whatsappLink;
-        console.log('whatsappLink:', whatsappLink);
+        // // Verifica que whatsappLink esté definido
+        // const whatsappLink = producto.whatsappLink;
+        // console.log('whatsappLink:', whatsappLink);
 
         // Cargar las imágenes del producto
         const carouselInner = document.getElementById('carousel-inner');
@@ -511,12 +321,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <small class="pt-1">(50 Reviews)</small>
             </div>
-            <h3 class="font-weight-semi-bold mb-4" style="color:red">S/. ${producto.precio.toFixed(2)}</h3>
+            <h3 class="font-weight-semi-bold mb-4" style="color:red"> S/${producto.precio.toFixed(2)}</h3>
             <p>Tamaño: ${producto.tamaño || 'N/A'}</p>
             <p class="mb-4">Descripción: ${producto.descripcion || 'No hay descripción disponible'}</p>
 
-            <div class="d-flex align-items-center mb-4 pt-2">
-                <a href="https://wa.me/959984541?" class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i>Pedir en Whatsapp</a>
+            <div class="d-flex align-items-center mb-4 pt-2"><i class="fa fa-shopping-cart mr-1"></i>
+                <a href="#" id="btn-whatsapp" class="btn btn-primary px-3" target="_blank"></a>
             </div>
         `;
     } else {
@@ -531,61 +341,307 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Cargar el JSON
 fetch('/data/promocion.json')
-.then(response => response.json())
-.then(data => {
-  // Insertar la frase1 en el <span> con id="frase1"
-  document.getElementById('frase1').textContent = data.frase1;
-  document.getElementById('frase2').textContent = data.frase2;
-  document.getElementById('frase3').textContent = data.frase3;
-  document.getElementById('frase4').textContent = data.frase4;
-  document.getElementById('slide1').src = data.slide1;
-  document.getElementById('slide2').src = data.slide2;
-  document.getElementById('slide3').src = data.slide3;
-  document.getElementById('oferta1').src = data.oferta1;
-  document.getElementById('oferta2').src = data.oferta2;
-//   document.getElementById('').src = data.slide3;
+    .then(response => response.json())
+    .then(data => {
+        // Insertar la frase1 en el <span> con id="frase1"
+        document.getElementById('frase1').textContent = data.frase1;
+        document.getElementById('frase2').textContent = data.frase2;
+        document.getElementById('frase3').textContent = data.frase3;
+        document.getElementById('frase4').textContent = data.frase4;
+        document.getElementById('slide1').src = data.slide1;
+        document.getElementById('slide2').src = data.slide2;
+        document.getElementById('slide3').src = data.slide3;
+        document.getElementById('oferta1').src = data.oferta1;
+        document.getElementById('oferta2').src = data.oferta2;
+        document.getElementById('logo1').src = data.logo1;
+        document.getElementById('logo2').src = data.logo2;
+        //   document.getElementById('').src = data.slide3;
 
-})
-.catch(error => console.error('Error al cargar el JSON:', error));
+    })
+    .catch(error => console.error('Error al cargar el JSON:', error));
 
 //Añadir mas codigo aca de bajo sobre promocion.json
-// Cargar el JSON
-// Función para procesar un archivo JSON y extraer el objeto en el índice 1 de subcat1
-function procesarArchivo(jsonUrl, nombreId, tamañoId, precioId, imagenId, descripcionId) {
-    fetch(jsonUrl)
-      .then(response => response.json())
-      .then(data => {
-        // Acceder al objeto en el índice 1 de subcat1 (segundo objeto)
-        const producto = data.subcat1[1]; // índice 1 es el segundo objeto
-  
-        // Acceder a cada propiedad del producto de manera independiente
-        const nombre = producto.nombre;
-        const tamaño = producto.tamaño;
-        const precio = producto.precio.toString(); // Convertir el precio a string
-        const imagen = producto.imagen;
-        const descripcion = producto.descripcion;
-  
-        // Insertar los valores en el HTML en los IDs proporcionados
-        document.getElementById(nombreId).textContent = nombre;
-        document.getElementById(tamañoId).textContent = tamaño ? `Tamaño: ${tamaño}` : 'Tamaño no disponible';
-        document.getElementById(precioId).textContent = `S/.${precio}`; // Usar precio ya como string
-        document.getElementById(imagenId).src = imagen;
-        // document.getElementById(descripcionId).textContent = descripcion;
-  
-        // Configurar el clic en la imagen para redirigir a la página de detalles
-        document.getElementById(imagenId).onclick = function () {
-          localStorage.setItem('productoSeleccionado', JSON.stringify(producto));
-          window.location.href = '/detalleProducto.html';
-        };
-      })
-      .catch(error => console.error('Error al cargar el JSON:', error));
-  }
-  
-  // Llamar a la función para los 4 archivos JSON, pasando el URL del archivo y los IDs correspondientes
-  procesarArchivo('/data/cat1.json', 'nombre1', 'tamaño1', 'precio1', 'imagen1', );
-  procesarArchivo('/data/cat2.json', 'nombre2', 'tamaño2', 'precio2', 'imagen2', 'descripcion2');
-  procesarArchivo('/data/cat3.json', 'nombre3', 'tamaño3', 'precio3', 'imagen3', 'descripcion3');
-  procesarArchivo('/data/cat4.json', 'nombre4', 'tamaño4', 'precio4', 'imagen4', 'descripcion4');
-  
 
-/////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////ASIGANAR EVENTO DE REDIRECCIONADO A LAS OFERTAS//////////////////////
+fetch('data/dbProductos.json')
+    .then(response => response.json())
+    .then(productosJSON => {
+        // Asignar eventos a los botones después de cargar el JSON
+        document.getElementById('btn-agregados').addEventListener('click', function (e) {
+            e.preventDefault(); // Evitar el comportamiento por defecto del enlace
+            guardarYRedirigir('HERRAMIENTAS', productosJSON);
+        });
+
+        document.getElementById('btn-construccion').addEventListener('click', function (e) {
+            e.preventDefault(); // Evitar el comportamiento por defecto del enlace
+            guardarYRedirigir('CONSTRUCCION', productosJSON);
+        });
+    })
+    .catch(error => {
+        console.error('Error al cargar el archivo JSON:', error);
+    });
+
+// // Función que guarda los productos en localStorage y redirige
+function guardarYRedirigir(categoria, productosJSON) {
+    //     // Obtener los productos de la categoría seleccionada
+    const productos = productosJSON[categoria];
+
+    if (productos) {
+        // Guardar los productos en localStorage
+        localStorage.setItem('productos', JSON.stringify(productos));
+        localStorage.setItem('categoriaSeleccionada', categoria); // Guardar la categoría seleccionada
+
+        // Redirigir a la página de productosTotales
+        window.location.href = 'productosTotales.html';
+    } else {
+        console.error('No se encontraron productos para la categoría:', categoria);
+    }
+}
+
+
+
+///////////////////////////PRODUCTOS TRAIDOS PARA EL FILTO DE STORE.HTML//////////////////////////////////////////
+let products = [];
+let currentPage = 1;
+const productsPerPage = 16; // Número de productos por página
+
+// Load products from JSON
+fetch('data/dbProductos.json')
+    .then(response => response.json())
+    .then(data => {
+        // Create categories and subcategories
+        Object.keys(data).forEach(categoria => {
+            Object.keys(data[categoria]).forEach(subcategoria => {
+                const subcatProducts = data[categoria][subcategoria].productos;
+                subcatProducts.forEach(product => {
+                    product.category = categoria; // Add category to product
+                    product.subcategory = subcategoria; // Add subcategory to product
+                    products.push(product);
+                });
+            });
+        });
+        shuffleArray(products); // Mezclar el arreglo de productos
+        displayProducts(products);
+        populateSubcategoryFilter(products);
+        setupPagination(products);
+    })
+    .catch(error => console.error('Error loading JSON:', error));
+
+// Function to shuffle the array
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Intercambiar elementos
+    }
+}
+
+// Display products
+function displayProducts(productArray) {
+    const productList = document.getElementById('productList');
+    productList.innerHTML = '';
+
+    const startIndex = (currentPage - 1) * productsPerPage;
+    const endIndex = startIndex + productsPerPage;
+    const paginatedProducts = productArray.slice(startIndex, endIndex);
+
+    paginatedProducts.forEach(product => {
+        const productElement = document.createElement('div');
+        productElement.classList.add('product');
+        productElement.innerHTML = `
+        <img src="${product.imagen}" alt="${product.nombre}" width="100" style="cursor: pointer;" data-product='${JSON.stringify(product)}'>
+        <h5>${product.nombre}</h5>
+        <p>Precio: S/${product.precio}</p>
+        <p clas="categoria">${product.category}</p>
+       <p>${product.subcategory}</p>
+    `;
+        productElement.querySelector('img').addEventListener('click', function () {
+            localStorage.setItem('productoSeleccionado', JSON.stringify(product));
+            window.location.href = 'detalleProducto.html';
+        });
+        productList.appendChild(productElement);
+    });
+}
+
+// Populate subcategory filter
+function populateSubcategoryFilter(products) {
+    const subcategorySet = new Set(products.map(product => product.subcategory));
+    const subcategoryFilter = document.getElementById('subcategoryFilter');
+
+    subcategorySet.forEach(subcategoria => {
+        const option = document.createElement('option');
+        option.value = subcategoria;
+        option.textContent = subcategoria.charAt(0).toUpperCase() + subcategoria.slice(1);
+        subcategoryFilter.appendChild(option);
+    });
+}
+
+// Filter products by subcategory
+function filterProducts() {
+    const subcategoryFilter = document.getElementById('subcategoryFilter').value;
+    let filteredProducts = products;
+
+    if (subcategoryFilter) {
+        filteredProducts = filteredProducts.filter(product => product.subcategory === subcategoryFilter);
+    }
+
+    currentPage = 1; // Reset to the first page after filtering
+    displayProducts(filteredProducts);
+    setupPagination(filteredProducts);
+}
+
+// Setup pagination
+function setupPagination(productArray) {
+    const pagination = document.getElementById('pagination');
+    pagination.innerHTML = '';
+
+    const pageCount = Math.ceil(productArray.length / productsPerPage);
+    for (let i = 1; i <= pageCount; i++) {
+        const button = document.createElement('button');
+        button.textContent = i;
+        button.onclick = function () {
+            currentPage = i;
+            displayProducts(productArray);
+        };
+        pagination.appendChild(button);
+    }
+}
+
+//////CODIGO PARA EL CARGADO DEL GOOGLE MASP///
+// Código para el mapa
+function initMap() {
+    const localCoords = { lat: -12.063435114146921, lng: -77.05397263585367 };
+
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 14,
+        center: localCoords,
+    });
+
+    const localMarker = new google.maps.Marker({
+        position: localCoords,
+        map: map,
+        title: "Nuestra tienda",
+    });
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            function (position) {
+                const userCoords = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                };
+
+                const userMarker = new google.maps.Marker({
+                    position: userCoords,
+                    map: map,
+                    title: "Tu ubicación",
+                    icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+                });
+
+                const bounds = new google.maps.LatLngBounds();
+                bounds.extend(localCoords);
+                bounds.extend(userCoords);
+                map.fitBounds(bounds);
+            },
+            function (error) {
+                switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                        alert("Usuario denegó el acceso a la geolocalización.");
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        alert("La ubicación no está disponible.");
+                        break;
+                    case error.TIMEOUT:
+                        alert("La solicitud de geolocalización expiró.");
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        alert("Ocurrió un error desconocido.");
+                        break;
+                }
+            }
+        );
+    } else {
+        alert("Tu navegador no soporta geolocalización.");
+    }
+}
+
+// Código para buscar productos
+function buscarProducto() {
+    const query = document.getElementById('buscador').value.toLowerCase();
+    const resultados = document.getElementById('resultados');
+    resultados.innerHTML = '';
+
+    if (query.trim() === '') {
+        return;
+    }
+
+    const resultadosFiltrados = productos.filter(producto =>
+        producto.nombre.toLowerCase().includes(query) ||
+        (producto.tamaño && producto.tamaño.toLowerCase().includes(query)) ||
+        (producto.descripcion && producto.descripcion.toLowerCase().includes(query))
+    );
+
+    if (resultadosFiltrados.length === 0) {
+        resultados.innerHTML = '<p>No se encontraron productos...</p>';
+    } else {
+        resultadosFiltrados.forEach(producto => {
+            const nombreFormateado = encodeURIComponent(`Me interesa el producto ${producto.nombre}`);
+            const whatsappLink = `https://wa.me/959984541?text=${nombreFormateado}`;
+
+            const divProducto = document.createElement('div');
+            divProducto.classList.add('producto');
+            const imgElement = `<img src="${producto.imagen || 'default-image.jpg'}" alt="${producto.nombre}" onerror="imagenError(this)">`;
+            divProducto.innerHTML = `
+                ${imgElement}
+                <div>
+                    <strong>${producto.nombre}</strong>
+                    <p>Tamaño: ${producto.tamaño || 'N/A'}</p>
+                    <p>Descripción: ${producto.descripcion || 'N/A'}</p>
+                    <strong>Precio: S/${producto.precio.toFixed(2)}</strong><br>
+                    <a class="ver-producto whatsapp-link" href="${whatsappLink}" target="_blank">Comprar</a>
+                </div>
+            `;
+
+            divProducto.querySelector('img').addEventListener('click', function () {
+                localStorage.setItem('productoSeleccionado', JSON.stringify(producto));
+                window.location.href = 'detalleProducto.html';
+            });
+
+            resultados.appendChild(divProducto);
+        });
+    }
+}
+
+// Cargar productos cuando se carga la página
+window.addEventListener('load', function () {
+    cargarProductos();
+});
+
+// Iniciar el mapa cuando se carga la página
+window.addEventListener('load', initMap);
+
+//////////////////////parametros //////////////////////////////
+
+// Función para procesar parámetros de la URL
+function procesarParametrosURL(callback) {
+    // Obtener todos los parámetros de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // Convertir los parámetros a un objeto simple
+    const parametros = {};
+    for (const [key, value] of urlParams.entries()) {
+        parametros[key] = value;
+    }
+    
+    // Ejecutar la función callback, pasando los parámetros
+    callback(parametros);
+}
+
+
+
+
+
+
+///////////////////////

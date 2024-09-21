@@ -1,0 +1,21 @@
+{
+    "AGREGADOS": {
+        "imagen": "/img/img-cat1.webp"
+    },
+    "CONSTRUCCION": {
+        "imagen": "/img/img-cat2.webp"
+    },
+    "TUBERIAS": {
+        "imagen": "/img/img-cat3.webp"
+    },
+    "GASFITERIA": {
+        "imagen": "/img/img-cat4.webp"
+    },
+    "HERRAMIENTAS": {
+        "imagen": "/img/img-cat5.webp"
+    },
+    "PINTURAS": {
+        "imagen": "/img/img-cat6.webp"
+    }
+    
+}

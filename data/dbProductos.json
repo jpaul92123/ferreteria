@@ -1,0 +1,654 @@
+{
+  "AGREGADOS": {
+    "Pidras": {
+      "productos": [
+        {
+          "nombre": "MT3 de Piedra Confitillo a GraneL",
+          "tamaño": "MT3",
+          "precio": 80,
+          "imagen": "/img/categoria/cat1/subcat1/1.webp",
+          "descripcion": "MT3 de Piedra Confitillo a GraneL"
+        },
+        {
+          "nombre": "MT3 de Piedra Chancada 1/2 a Granel",
+          "tamaño": "MT3",
+          "precio": 75,
+          "descripcion": "MT3 de Piedra Chancada 1/2 a Granel",
+          "imagen": "/img/categoria/cat1/subcat1/2.webp"
+        },
+        {
+          "nombre": "Bolsa Piedra Confitillo",
+          "tamaño": "40K",
+          "precio": 4,
+          "imagen": "/img/categoria/cat1/subcat1/3.webp",
+          "descripcion": "Bolsa Piedra Confitillo 40Kl"
+        },
+        {
+          "nombre": "Bolsa Piedra Chancada",
+          "tamaño": "40k",
+          "precio": 3.5,
+          "descripcion": "Bolsa Piedra Chancada 40k",
+          "imagen": "/img/categoria/cat1/subcat1/4.webp"
+        }
+      ]
+    },
+    "Arena": {
+      "productos": [
+        {
+          "nombre": "MT3 de Arena Fina a GraneL",
+          "tamaño": "MT3",
+          "precio": 65,
+          "imagen": "/img/categoria/cat1/subcat2/1.webp",
+          "descripcion": "MT3 de Arena Fina a GraneL  "
+        },
+        {
+          "nombre": "MT3 de Arena Gruesa a GraneL",
+          "tamaño": "MT3",
+          "precio": 65,
+          "imagen": "/img/categoria/cat1/subcat2/2.webp",
+          "descripcion": "MT3 de Arena Gruesa a Grane"
+        },
+        {
+          "nombre": "Bolsa de Arena Gruesa",
+          "tamaño": "bolsa",
+          "precio": 3.5,
+          "imagen": "/img/categoria/cat1/subcat2/3.webp",
+          "descripcion": "Bolsa de Arena Gruesa"
+        },
+        {
+          "nombre": "Bolsa de arena Fina",
+          "tamaño": "bolsa",
+          "precio": 3.5,
+          "imagen": "/img/categoria/cat1/subcat2/4.webp",
+          "descripcion": "Bolsa de arena Fina"
+        }
+      ]
+    },
+    "Afirmado": {
+      "productos": [
+        {
+          "nombre": "MT3 de Afirmado a GraneL",
+          "tamaño": "MT3",
+          "precio": 60,
+          "imagen": "/img/categoria/cat1/subcat3/1.webp",
+          "descripcion": "MT3 de Afirmado a GraneL"
+        }
+      ]
+    }
+  },
+  "CONSTRUCCION": {
+    "Cemento": {
+      "productos": [
+        {
+          "nombre": "Bolsa de Cemento Andino Tipo V",
+          "tamaño": "42.5Kg",
+          "precio": 39.9,
+          "descripcion": "Bolsa de Cemento Andino Tipo -V- 42.5 Kilos Aprox",
+          "imagen": "/img/categoria/cat2/subcat1/1.webp"
+        },
+        {
+          "nombre": "Bolsa Cemento Andino Premium",
+          "tamaño": "42.5Kg",
+          "precio": 32.5,
+          "descripcion": "Bolsa Cemento Andino Premium 42.5 Kilos Aprox",
+          "imagen": "/img/categoria/cat2/subcat1/2.webp"
+        },
+        {
+          "nombre": "Bolsa de Cemento Andino Ultra ",
+          "tamaño": "42.5Kg",
+          "precio": 32,
+          "imagen": "/img/categoria/cat2/subcat1/3.webp",
+          "descripcion": "Bolsa de Cemento Andino Ultra 42.5 Kilos Aprox"
+        },
+        {
+          "nombre": "Bolsa de Cemento APU",
+          "tamaño": "42.5Kg",
+          "precio": 27.8,
+          "descripcion": "Bolsa de Cemento APU 42.5KG APROX",
+          "imagen": "/img/categoria/cat2/subcat1/4.webp"
+        },
+        {
+          "nombre": "Bolsa de Cemento Sol ",
+          "tamaño": "42.5Kg",
+          "precio": 29.9,
+          "descripcion": "Bolsa de Cemento Sol 42.5 APROX",
+          "imagen": "/img/categoria/cat2/subcat1/5.webp"
+        },
+        {
+          "nombre": "Bolsa de Concrelisto 210",
+          "tamaño": "40Kg",
+          "precio": 12.9,
+          "descripcion": " Bolsa de Concrelisto 210- 40 Kilo",
+          "imagen": "/img/categoria/cat2/subcat1/6.webp"
+        },
+        {
+          "nombre": "Bolsa de Supermortero 40",
+          "tamaño": "40Kg",
+          "precio": 12.9,
+          "descripcion": "Bolsa de Supermortero 40",
+          "imagen": "/img/categoria/cat2/subcat1/7.webp"
+        },
+        {
+          "nombre": "Bolsa de Tarrajeolisto 40",
+          "tamaño": "40Kg",
+          "precio": 12.9,
+          "descripcion": "Bolsa de Tarrajeolisto 40",
+          "imagen": "/img/categoria/cat2/subcat1/8.webp"
+        },
+        {
+          "nombre": "Bolsa de Cemento Quisqueya Estructural",
+          "tamaño": "42.5Kg",
+          "precio": 27.5,
+          "descripcion": "Bolsa de Cemento Quisqueya Estructural 42.5",
+          "imagen": "/img/categoria/cat2/subcat1/9.webp"
+        },
+        {
+          "nombre": "Bolsa Cemento Quisqueya Uso General",
+          "tamaño": "42.5Kg",
+          "precio": 26,
+          "descripcion": "Bolsa Cemento Quisqueya Uso General 42.5",
+          "imagen": "/img/categoria/cat2/subcat1/10.webp"
+        },
+        {
+          "nombre": "Bolsa Cemento Quisqueya Uso Albañileria",
+          "tamaño": "42.5Kg",
+          "precio": 24,
+          "descripcion": "Bolsa Cemento Quisqueya Uso Albañileria",
+          "imagen": "/img/categoria/cat2/subcat1/11.webp"
+        }
+      ]
+    },
+    "Ladrillos": {
+      "productos": [
+        {
+          "nombre": "Ladrillos Caravista Pirámide",
+          "tamaño": "9x24x12",
+          "precio": 2.2,
+          "descripcion": "Ladrillos Caravista de 9 x 24 x 12 Pirámide ",
+          "imagen": "/img/categoria/cat2/subcat2/1.webp"
+        },
+        {
+          "nombre": "Ladrillos Caravista Pirámide",
+          "tamaño": "6x24x12",
+          "precio": 1.8,
+          "descripcion": "Ladrillos Caravista de 6 x 24 x 12 Pirámide ",
+          "imagen": "/img/categoria/cat2/subcat2/2.webp"
+        },
+        {
+          "nombre": " Ladrillos de Techo Pirámide",
+          "tamaño": "20x30x30",
+          "precio": 4.5,
+          "descripcion": "Ladrillos Caravista de 20 x 30 x 30 Pirámide ",
+          "imagen": "/img/categoria/cat2/subcat2/3.webp"
+        },
+        {
+          "nombre": " Ladrillo de Techo Pirámide",
+          "tamaño": "15x30x30",
+          "precio": 3,
+          "descripcion": "Ladrillo de Techo 15 x 30 x 30 Pirámide",
+          "imagen": "/img/categoria/cat2/subcat2/4.webp"
+        },
+        {
+          "nombre": "Ladrillos de TechoPirámide",
+          "tamaño": " 12x30x30 ",
+          "precio": 2.8,
+          "descripcion": "Ladrillos de Techo 12 x 30 x 30 Pirámide",
+          "imagen": "/img/categoria/cat2/subcat2/5.webp"
+        },
+        {
+          "nombre": "Ladrillos de TechoPirámide",
+          "tamaño": " 8x30x30 ",
+          "precio": 2.6,
+          "descripcion": "Ladrillos de Techo 8 x 30 x 30 Pirámide",
+          "imagen": "/img/categoria/cat2/subcat2/6.webp"
+        },
+        {
+          "nombre": "Ladrillos King Kong 18 Huecos Pirámide",
+          "tamaño": "18H",
+          "precio": 1.1,
+          "descripcion": "Ladrillos King Kong 18 Huecos Pirámide",
+          "imagen": "/img/categoria/cat2/subcat2/7.webp"
+        },
+        {
+          "nombre": "Ladrillos King Kong - MVF -18 Hueco",
+          "tamaño": "18H",
+          "precio": 0.9,
+          "descripcion": "Ladrillos King Kong - MVF -18 Hueco",
+          "imagen": "/img/categoria/cat2/subcat2/8.webp"
+        },
+        {
+          "nombre": "adrillo Pandereta C/ Raya Pirámide",
+          "tamaño": "6H",
+          "precio": 0.8,
+          "descripcion": "adrillo Pandereta C/ Raya Pirámide",
+          "imagen": "/img/categoria/cat2/subcat2/9.webp"
+        },
+        {
+          "nombre": "Ladrillos Pandereta C/ Raya Huachipa",
+          "tamaño": "6H",
+          "precio": 0.7,
+          "descripcion": "Ladrillos Pandereta C/ Raya Huachipa",
+          "imagen": "/img/categoria/cat2/subcat2/10.webp"
+        }
+      ]
+    },
+    "Yeso": {
+      "productos": [
+        {
+          "nombre": "Bolsa de Yeso Cerámico ",
+          "tamaño": "20Kl",
+          "precio": 26,
+          "descripcion": "Bolsa de Yeso Cerámico 20 Kilos",
+          "imagen": "/img/categoria/cat2/subcat3/1.webp"
+        },
+        {
+          "nombre": "Bolsa de Yeso de Construcción",
+          "tamaño": "15Kl",
+          "precio": 18,
+          "descripcion": "Bolsa de Yeso de Construcción 15 Kilos",
+          "imagen": "/img/categoria/cat2/subcat3/2.webp"
+        },
+        {
+          "nombre": "Kilo de Yeso Cerámico Losaro",
+          "tamaño": "1Kl",
+          "precio": 3,
+          "descripcion": "Kilo de Yeso Cerámico Losaro",
+          "imagen": "/img/categoria/cat2/subcat3/3.webp"
+        }
+      ]
+    },
+    "Fierro": {
+      "productos": [
+        {
+          "nombre": "VARILLA DE FIERRO CORRUGADO DE 1'",
+          "tamaño": "1 Pulgada",
+          "precio": 173.50,
+          "descripcion": " 1' - ACEROS AREQUIPA",
+          "imagen": "/img/categoria/cat2/subcat4/1.webp"
+        },
+        {
+          "nombre": "VARILLA DE FIERRO CORRUGADO DE 3/4'",
+          "tamaño": "3/4",
+          "precio": 98.70,
+          "descripcion": " 3/4- ACEROS AREQUIPA",
+          "imagen": "/img/categoria/cat2/subcat4/2.webp"
+        },
+        {
+          "nombre": "VARILLA DE FIERRO CORRUGADO 5/8'",
+          "tamaño": "5/8 ",
+          "precio": 67,
+          "descripcion": "5/8 SIDERPERU",
+          "imagen": "/img/categoria/cat2/subcat4/3.webp"
+        },
+        {
+          "nombre": "VARILLA DE FIERRO CORRUGADO DE 1/2 '",
+          "tamaño": "1/2 ",
+          "precio": 43.5,
+          "descripcion": "1/2 SIDERPERU",
+          "imagen": "/img/categoria/cat2/subcat4/4.webp"
+        },
+        {
+          "nombre": "VARILLAS DE FIERRO CORRUGADO DE 12 MM ",
+          "tamaño": "12mm ",
+          "precio": 39.5,
+          "descripcion": "12 MM - ACEROS AREQUIPA",
+          "imagen": "/img/categoria/cat2/subcat4/5.webp"
+        },
+        {
+          "nombre": "VARILLA FIERRO CORRUGADO 3/8 SIDERPERU ",
+          "tamaño": "3/8",
+          "precio": 24.5,
+          "descripcion": "3/8 SIDERPERU",
+          "imagen": "/img/categoria/cat2/subcat4/6.webp"
+        },
+        {
+          "nombre": "VARILLA DE FIERRO CORRUGADO 8 MM ACEROS AREQUIPA ",
+          "tamaño": "8mm",
+          "precio": 17.5,
+          "descripcion": "8 MM ACEROS AREQUIPA",
+          "imagen": "/img/categoria/cat2/subcat4/7.webp"
+        },
+        {
+          "nombre": "VARILLA DE FIERRO CORRUGADO 1/4 SIDERPERU",
+          "tamaño": "1/4",
+          "precio": 11,
+          "descripcion": "1/4 SIDERPERU",
+          "imagen": "/img/categoria/cat2/subcat4/8.webp"
+        }
+      ]
+    },
+    "Alambre": {
+      "productos": [
+        {
+          "nombre": "KILO DE ALAMBRE CONSTRUCCIÓN NRO 8",
+          "tamaño": "8'",
+          "precio": 6,
+          "descripcion": "ALAMBRE CONSTRUCCIÓN NRO 8",
+          "imagen": "/img/categoria/cat2/subcat5/1.webp"
+        },
+        {
+          "nombre": "KILO ALAMBRE DE CONSTRUCCIÓN NRO 16",
+          "tamaño": "16'",
+          "precio": 6,
+          "descripcion": "ALAMBRE DE CONSTRUCCIÓN NRO 16",
+          "imagen": "/img/categoria/cat2/subcat5/2.webp"
+        },
+        {
+          "nombre": "ROLLO DE ALAMBRE CONSTRUCCIÓN 8 X 100 KILOS",
+          "tamaño": "8'",
+          "precio": 480,
+          "descripcion": "ALAMBRE CONSTRUCCIÓN NRO 8",
+          "imagen": "/img/categoria/cat2/subcat5/3.webp"
+        },
+        {
+          "nombre": "ROLLO DE ALAMBRE CONSTRUCCIÓN 16 X 100 KILOS",
+          "tamaño": "16'",
+          "precio": 480,
+          "descripcion": "ALAMBRE DE CONSTRUCCIÓN NRO 16",
+          "imagen": "/img/categoria/cat2/subcat5/4.webp"
+        }
+      ]
+    },
+    "Casetones": {
+      "productos": [
+        {
+          "nombre": "CASETON DE TECHO 15 x 0.30 x 1.20 D-10 ETSA",
+          "tamaño": "15 x 0.30'",
+          "precio": 13.5,
+          "descripcion": "CASETON DE TECHO",
+          "imagen": "/img/categoria/cat2/subcat6/1.webp"
+        },
+        {
+          "nombre": "CASETON DE TECHO  12 x 0.30 x 1.20 D-10 ETSA",
+          "tamaño": "12 x 0.30'",
+          "precio": 11.5,
+          "descripcion": "CASETON DE TECHO",
+          "imagen": "/img/categoria/cat2/subcat6/2.webp"
+        },
+        {
+          "nombre": "CASETON DE TECHO 8 x 0.30 x 1.20 D-10 ETSA",
+          "tamaño": "8'",
+          "precio": 10,
+          "descripcion": "CASETON DE TECHO",
+          "imagen": "/img/categoria/cat2/subcat6/3.webp"
+        }
+      ]
+    }
+  },
+  "TUBERIAS": {
+    "Tubos de PVC": {
+      "productos": [
+        {
+          "nombre": "TUBO PVC P/LUZ SAP 1/2 X 3MTS PAVCO",
+          "tamaño": "1/2",
+          "precio": 11.9,
+          "descripcion": "TUBO PVC P/LUZ",
+          "imagen": "/img/categoria/cat3/subcat1/1.webp"
+        },
+        {
+          "nombre": "TUBO PVC P/LUZ 3/4 X 3MTS SEL PAVCO",
+          "tamaño": "3/4",
+          "precio": 6.9,
+          "descripcion": "TUBO PVC P/LUZ",
+          "imagen": "/img/categoria/cat3/subcat1/2.webp"
+        },
+        {
+          "nombre": "TUBO PVC P/AGUA 1 X 5MTS PAVCO",
+          "tamaño": "1'",
+          "precio": 45,
+          "descripcion": "TUBO PVC P/AGUA",
+          "imagen": "/img/categoria/cat3/subcat1/3.webp"
+        },
+        {
+          "nombre": "TUBO PVC P/AGUA 3/4 X 5MTS PAVCO",
+          "tamaño": "3/4",
+          "precio": 31.9,
+          "descripcion": "TUBO PVC P/AGUA",
+          "imagen": "/img/categoria/cat3/subcat1/4.webp"
+        },
+        {
+          "nombre": "TUBO PVC P/AGUA 1/2 X 5MTS PAVCO",
+          "tamaño": "1/2",
+          "precio": 23,
+          "descripcion": "TUBO PVC P/AGUA",
+          "imagen": "/img/categoria/cat3/subcat1/5.webp"
+        },
+        {
+          "nombre": "TUBO PVC DESAGÜE DE 6 X 6MTS PAVCO NARANJA",
+          "tamaño": "6",
+          "precio": 225,
+          "descripcion": "TUBO PVC DESAGÜE ",
+          "imagen": "/img/categoria/cat3/subcat1/6.webp"
+        },
+        {
+          "nombre": "TUBO PVC DESAGÜE 1 1/2 X 3MTS PAVCO",
+          "tamaño": "1 1/2",
+          "precio": 19,
+          "descripcion": "TUBO PVC DESAGÜE",
+          "imagen": "/img/categoria/cat3/subcat1/7.webp"
+        },
+        {
+          "nombre": "TUBO PVC DESAGÜE 2 X 3MTS PAVCO",
+          "tamaño": "2",
+          "precio": 19.8,
+          "descripcion": "TUBO PVC DESAGÜE",
+          "imagen": "/img/categoria/cat3/subcat1/8.webp"
+        },
+        {
+          "nombre": "TUBO PVC DESAGÜE DE 3 X 3MTS PAVCO",
+          "tamaño": "3",
+          "precio": 36,
+          "descripcion": "TUBO PVC DESAGÜE",
+          "imagen": "/img/categoria/cat3/subcat1/9.webp"
+        },
+        {
+          "nombre": "TUBO PVC DESAGÜE DE 4 X 3MTS PAVCO",
+          "tamaño": "4",
+          "precio": 39,
+          "descripcion": "TUBO PVC DESAGÜE",
+          "imagen": "/img/categoria/cat3/subcat1/10.webp"
+        },
+        {
+          "nombre": "TUBO CPVC DE 1/2 X 5MTS PAVCO",
+          "tamaño": "1/2",
+          "precio": 31.9,
+          "descripcion": "TUBO CPVC-AGUA CALIENTE",
+          "imagen": "/img/categoria/cat3/subcat1/11.webp"
+        }
+      ]
+    },
+    "Curvas de PVC": {
+      "productos": [
+        {
+          "nombre": "CURVA PVC P/LUZ SAP 1/2 PAVCO",
+          "tamaño": "1/2",
+          "precio": 2,
+          "descripcion": "CURVA PVC P/LUZ",
+          "imagen": "/img/categoria/cat3/subcat2/1.webp"
+        },
+        {
+          "nombre": "CURVA PVC P/LUZ 3/4 SEL PAVCO",
+          "tamaño": "3/4",
+          "precio": 0.8,
+          "descripcion": "CURVA PVC P/LUZ",
+          "imagen": "/img/categoria/cat3/subcat2/2.webp"
+        }
+      ]
+    },
+    "Pegamento para PVC": {
+      "productos": [
+        {
+          "nombre": "PEGAMENTO PVC OATEY 1 LITRO - 32 ONZ - AZUL",
+          "tamaño": "1 LITRO",
+          "precio": 60,
+          "descripcion": "PEGAMENTO PVC OATEY",
+          "imagen": "/img/categoria/cat3/subcat3/1.webp"
+        },
+        {
+          "nombre": "PEGAMENTO PVC OATEY 1/8 - 16 ONZ - AZUL",
+          "tamaño": "1/8",
+          "precio": 39.9,
+          "descripcion": "PEGAMENTO PVC",
+          "imagen": "/img/categoria/cat3/subcat3/2.webp"
+        },
+        {
+          "nombre": "PEGAMENTO PVC OATEY 1/16 - 8 ONZ - AZUL",
+          "tamaño": "1/16",
+          "precio": 24.9,
+          "descripcion": "PEGAMENTO PVC",
+          "imagen": "/img/categoria/cat3/subcat3/3.webp"
+        },
+        {
+          "nombre": "PEGAMENTO PVC OATEY 1/32 - 4 ONZ - AZUL",
+          "tamaño": "1/32",
+          "precio": 14.9,
+          "descripcion": "PEGAMENTO PVC",
+          "imagen": "/img/categoria/cat3/subcat3/4.webp"
+        }
+      ]
+    }
+  },
+  "GASFITERIA": {
+    "Accesorio de Piso y Drenaje": {
+      "productos": [
+        {
+          "nombre": "Registro de Piso de 4' Cromado Pesado Metusa",
+          "tamaño": "4",
+          "precio": 58,
+          "descripcion": "Registro de Piso",
+          "imagen": "/img/categoria/cat4/subcat1/1.webp"
+        },
+        {
+          "nombre": "Registro de Piso de 2' Cromado Metusa",
+          "tamaño": "2",
+          "precio": 14.9,
+          "descripcion": "Registro de Piso",
+          "imagen": "/img/categoria/cat4/subcat1/2.webp"
+        },
+        {
+          "nombre": "Sumidero de Piso de 2' Cromado Metusa",
+          "tamaño": "2",
+          "precio": 14.9,
+          "descripcion": "Sumidero de Piso",
+          "imagen": "/img/categoria/cat4/subcat1/3.webp"
+        }
+      ]
+    },
+    "Accesorio sanitarios": {
+      "productos": [
+        {
+          "nombre": "TUBO DE ABASTO DE 1/2 X 60CM METUSA",
+          "tamaño": "1/2",
+          "precio": 26,
+          "descripcion": "Registro de Piso",
+          "imagen": "/img/categoria/cat4/subcat2/1.webp"
+        }
+      ]
+    }
+  },
+  "HERRAMIENTAS": {
+    "Cables": {
+      "productos": [
+        {
+          "nombre": "Rollo de Cable Nro 10 x 100 mts Indeco",
+          "tamaño": "10",
+          "precio": 375,
+          "descripcion": "Rollo de Cable",
+          "imagen": "/img/categoria/cat5/subcat1/1.webp"
+        },
+        {
+          "nombre": "Rollo de Cable Nro 12 x 100 mts Indeco",
+          "tamaño": "12",
+          "precio": 245,
+          "descripcion": "Rollo de Cable",
+          "imagen": "/img/categoria/cat5/subcat1/2.webp"
+        },
+        {
+          "nombre": "Rollo de Cable Nro 14 x 100 mts Indeco",
+          "tamaño": "14",
+          "precio": 165,
+          "descripcion": "Rollo de Cable",
+          "imagen": "/img/categoria/cat5/subcat1/3.webp"
+        }
+      ]
+    },
+    "Tornilleria": {
+      "productos": [
+        {
+          "nombre": "Ciento de Capuchón PVC para Calamina",
+          "tamaño": "-",
+          "precio": 12,
+          "descripcion": "Capuchón PVC",
+          "imagen": "/img/categoria/cat5/subcat2/1.webp"
+        },
+        {
+          "nombre": "Ciento de Tornillo 5 x 80mm SPAX Aster",
+          "tamaño": "5 x 80",
+          "precio": 29,
+          "descripcion": "Tornillo 5 x 80mm",
+          "imagen": "/img/categoria/cat5/subcat2/2.webp"
+        },
+        {
+          "nombre": "Millar Tornillo para Drywall 7 x 7/16 Punta Broca -DG",
+          "tamaño": "7x 7/16",
+          "precio": 30.5,
+          "descripcion": "Tornillo para Drywall",
+          "imagen": "/img/categoria/cat5/subcat2/3.webp"
+        },
+        {
+          "nombre": "Millar Tornillo para Drywall 7 x 1 Punta Broca",
+          "tamaño": "14",
+          "precio": 35,
+          "descripcion": "Tornillo para Drywall Punta Broca",
+          "imagen": "/img/categoria/cat5/subcat2/4.webp"
+        }
+      ]
+    },
+    "Clavos": {
+      "productos": [
+        {
+          "nombre": "Caja de Clavos de 4 x 30 Kilos Embolsado",
+          "tamaño": "4x30",
+          "precio": 195,
+          "descripcion": "Caja de Clavos",
+          "imagen": "/img/categoria/cat5/subcat3/1.webp"
+        },
+        {
+          "nombre": "Caja de Clavos de 3 x 30 Kilos Embolsado",
+          "tamaño": "3x30",
+          "precio": 195,
+          "descripcion": "Caja de Clavos",
+          "imagen": "/img/categoria/cat5/subcat3/2.webp"
+        },
+        {
+          "nombre": "Caja de Clavos de 2½ x 30 Kilos Embolsado",
+          "tamaño": "2½x30",
+          "precio": 195,
+          "descripcion": "Caja de Clavos",
+          "imagen": "/img/categoria/cat5/subcat3/3.webp"
+        },
+        {
+          "nombre": "Caja de Clavos de 2 x 30 Kilos Embolsado",
+          "tamaño": "14",
+          "precio": 195,
+          "descripcion": "Caja de Clavos",
+          "imagen": "/img/categoria/cat5/subcat3/3.webp"
+        },
+        {
+          "nombre": "Kilo de Clavos de 2½ Embolsado",
+          "tamaño": "14",
+          "precio": 165,
+          "descripcion": "Rollo de Cable",
+          "imagen": "/img/categoria/cat5/subcat3/3.webp"
+        },
+        {
+          "nombre": "Caja de Clavos de Acero de 1-DW TK-Eternit",
+          "tamaño": "14",
+          "precio": 165,
+          "descripcion": "Rollo de Cable",
+          "imagen": "/img/categoria/cat5/subcat3/3.webp"
+        }
+      ]
+    }
+  }
+}

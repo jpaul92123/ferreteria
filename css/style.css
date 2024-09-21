@@ -70,9 +70,10 @@ section {
   display: block;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
-} 
+}
 
 /* .container-fluid {
   padding: 0 !important;
@@ -114,6 +115,11 @@ p {
   font-weight: 500;
   margin-top: 0;
   margin-bottom: 1rem;
+}
+@media(max-width:520px) {
+  p {
+    font-size: 0.7rem;
+  }
 }
 
 abbr[title],
@@ -475,6 +481,13 @@ h5,
     font-size: 0.8rem;
   }
 }
+@media (max-width: 520px) {
+
+  h5,
+  .h5 {
+    font-size: 0.6rem;
+  }
+}
 
 h6,
 .h6 {
@@ -671,11 +684,11 @@ pre code {
   margin-left: auto;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 350px) {
 
   .container,
   .container-sm {
-    max-width: 540px;
+    max-width: 720px;
   }
 }
 
@@ -2223,7 +2236,7 @@ pre code {
   color: #495057;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #EDF1FF;
+  border: 3px solid #e8eaf3;
   border-radius: 0;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -3030,6 +3043,7 @@ fieldset:disabled a.btn {
 .show>.btn-light.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(222, 222, 223, 0.5);
 }
+
 /* 
 .btn-dark {
   color: #fff;
@@ -3896,7 +3910,7 @@ input[type="button"].btn-block {
   text-align: center;
   white-space: nowrap;
   background-color: #e9ecef;
-  border: 1px solid #EDF1FF;
+  border: 3px solid #e8eaf3;
 }
 
 .input-group-text input[type="radio"],
@@ -4920,6 +4934,7 @@ input[type="button"].btn-block {
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
+  margin-bottom: 1rem;
 }
 
 .card>hr {
@@ -10730,7 +10745,7 @@ a.text-dark:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgb(8 8 8 / 50%);
+  background: rgb(8 8 8 / 0.69);
   z-index: 1;
 }
 
@@ -10786,6 +10801,47 @@ a.text-dark:focus {
 
 .product-item .btn:hover {
   color: #e8bf0a !important;
+}
+
+.product {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 5px;
+  width: 250PX;
+  display: inline-block;
+}
+
+@media (max-width:700px) {
+  .product {
+    margin: 2px;
+    width: 150px;
+  }
+} 
+@media (max-width:350px) {
+  .product {
+    margin: 1px;
+    width: 110px;
+  }
+}
+
+
+.pagination {
+  color: black;
+  float: right;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.pagination button {
+  margin: 0 3px;
+  padding: 5px 8px;
+  background-color: dodgerblue;
+  color: white;
+}
+
+.pagination button:hover:not(.active) {
+  background-color: #ddd;
 }
 
 .contact-form .help-block ul {
@@ -10915,6 +10971,24 @@ a.text-dark:focus {
   flex: 0 0 calc(66.6% - 1rem);
 }
 
+/*margin para menu  celulares */
+@media (max-width:992px) {
+  .mt-celulares {
+    margin-top: 8rem;
+  }
+}
+
+@media (max-width:768px) {
+  .mt-celulares {
+    margin-top: 5rem;
+  }
+}
+
+@media (max-width:480px) {
+  .mt-celulares {
+    margin-top: 3rem;
+  }
+}
 
 /* .whatsapp flotante */
 
@@ -10946,7 +11020,7 @@ a.text-dark:focus {
 .tablink,
 .tablink2,
 .tablink3 {
-  background-color:#090909;
+  background-color: #090909;
   color: white;
   float: left;
   border: none;
@@ -10970,7 +11044,7 @@ a.text-dark:focus {
 .tablink:hover,
 .tablink2:hover,
 .tablink3:hover {
-  background-color: var(--warning)!important
+  background-color: var(--warning) !important
 }
 
 
@@ -11100,39 +11174,250 @@ category-section {
   position: absolute;
   z-index: 9;
   padding: 2px 0;
-  left: 0 ;
- }
- p.enviosgratis:hover {
+  left: 0;
+}
+
+p.enviosgratis:hover {
   background-color: var(--primary);
   color: var(--dark);
- }
+}
 
- .icon-fire {
-  color:var(--primary)
- }
+.icon-fire {
+  color: var(--primary)
+}
 
- .marquee {
-    width: 100%;
-    overflow: hidden;
-    background-color: black;
-    white-space: nowrap;
-    box-sizing: border-box;
-    position: relative;
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  background-color: black;
+  white-space: nowrap;
+  box-sizing: border-box;
+  position: relative;
 }
 
 #frase3 {
   font-size: 1rem;
   font-weight: 500;
-    display: block;
-    padding: 5px;
-    color: white;
-    background-color: black;
-    transition: background-color 0.3s;
-    animation: marquee 15s linear infinite;
+  display: block;
+  padding: 5px;
+  color: white;
+  background-color: black;
+  transition: background-color 0.3s;
+  animation: marquee 15s linear infinite;
 }
 
 
 @keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-90%); }
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-90%);
+  }
+}
+
+/*CUERPO DEL NUEO GALERIA*/
+#category-name {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #333;
+  font-weight: 600;
+}
+
+#products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
+  gap: 5px;
+}
+
+@media (max-width:464px) {
+  #products-container {
+
+    grid-template-columns: repeat(auto-fill, minmax(120px, 2fr));
+    gap: 2px;
+  }
+}
+
+.product-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.product-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.product-item h2 {
+  font-size: 1.3rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.product-item .price {
+  font-weight: bold;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 4rem;
+
+}
+
+#no-products {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+  margin-top: 20px;
+}
+
+.product-item .btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.product-item .btn:hover {
+  background-color: #0056b3;
+}
+
+/*****************************/
+
+/* Estilos para el contenedor del carrusel */
+.owl-carousel .owl-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.owl-item:hover {
+  background-color: #000;
+  color: #fafbff;
+}
+
+/* Estilos para los elementos del carrusel */
+.category-item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.category-item:hover {
+  background-color: transparent;
+
+}
+
+.category-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 2px solid #eee;
+}
+
+.category-item img:hover {
+  background-color: transparent;
+
+}
+
+.category-item h2 {
+  font-size: 1.5rem;
+  color: #333;
+  padding: 15px;
+  margin: 0;
+  background: #f8f9fa;
+  border-top: 2px solid #eee;
+
+}
+
+.category-item h2:hover {
+  background-color: transparent;
+  color: whites;
+}
+
+@media (max-width:768px) {
+  .category-item h2 {
+    font-size: 1rem;
+
+  }
+
+}
+
+@media (max-width:520px) {
+  .category-item h2 {
+    font-size: 0.8rem;
+
+  }
+
+}
+
+.category-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.custom-carousel-img:hover {
+  opacity: 3;
+}
+
+/*//////////////////////////////////////////////////*/
+/* Estilo para mantener el menú visible */
+.dropdown-menu {
+  display: block;
+  border: none
+}
+
+/* Ocultar subcategorías por defecto */
+.dropdown-submenu .dropdown-menu {
+  display: none;
+  /* border: 1px solid gray; */
+  background-color: #fafbff;
+  position: absolute;
+  left: 83%;
+  top: 0;
+  margin-top: 0;
+  margin-left: 0;
+}
+
+@media (max-width:992px) {
+  .dropdown-submenu .dropdown-menu {
+
+    background-color: #343537 !important;
+  }
+}
+
+/* Mostrar subcategorías al hacer hover sobre las categorías */
+.dropdown-submenu:hover .dropdown-menu {
+  display: block;
+}
+
+/* Agregar algo de margen entre las subcategorías */
+.dropdown-submenu {
+  position: relative;
 }

@@ -67,7 +67,7 @@
     display: block;
     /* Ocultar submenú por defecto */
     list-style: none;
-    padding-left: 20px;
+   
 }
 
 .has-submenu:hover .submenu {
